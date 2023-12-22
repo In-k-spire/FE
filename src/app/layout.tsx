@@ -12,9 +12,9 @@ export default function RootLayout({
       <body className="flex">
         <RecoilRoot>
           <SideBar />
-          <div className="flex flex-1 flex-col overflow-scroll">
-            <div className="h-16 w-full shadow-sm"></div>
-            <div className="px-6">{children}</div>
+          <div className="bg-background/white flex flex-1 flex-col overflow-scroll">
+            <div className="bg-white h-16 w-full shadow-sm"></div>
+            <div className="flex-1 px-12 py-6">{children}</div>
           </div>
         </RecoilRoot>
       </body>

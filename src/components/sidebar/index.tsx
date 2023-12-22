@@ -3,6 +3,8 @@ import Menu from "./menu";
 import { RxDashboard } from "react-icons/rx";
 import { FaAngleLeft } from "react-icons/fa6";
 import useSideBar from "@/hooks/useSideBar";
+import { IoBookOutline, IoSettingsOutline } from "react-icons/io5";
+import { GoGraph } from "react-icons/go";
 const SideBar = () => {
   const { isOpen, toggleIsOpen } = useSideBar();
   return (
@@ -39,8 +41,9 @@ const SideBar = () => {
         </div>
       </div>
       <Menu icon={<RxDashboard />} title="홈" />
-      <Menu icon={<RxDashboard />} title="독후감" />
-      <Menu icon={<RxDashboard />} title="통계" />
+      <Menu icon={<IoBookOutline />} title="독후감" />
+      <Menu icon={<GoGraph />} title="통계" />
+      <Menu icon={<IoSettingsOutline />} title="설정" />
     </div>
   );
 };

@@ -14,6 +14,7 @@ const config: Config = {
       "grayscale/20": "#E9E9E9",
       white: "#fff",
       black: "#000",
+      "background/white": "#f5f6fb",
     },
     extend: {
       backgroundImage: {
