@@ -1,10 +1,7 @@
-import {
-  atom,
-  useRecoilState,
-  useRecoilValue,
-  useSetRecoilState,
-} from "recoil";
+import { atom } from "recoil";
+import { recoilPersist } from "recoil-persist";
 
+const { persistAtom } = recoilPersist();
 interface SideBar {
   isOpen: boolean;
   page: string;
@@ -12,10 +9,11 @@ interface SideBar {
 
 const sidebarAtomState = atom<SideBar>({
   default: {
-    isOpen: false,
+    isOpen: true,
     page: "홈",
   },
   key: "side",
+  effects_UNSTABLE: [persistAtom],
 });
 
 export default sidebarAtomState;

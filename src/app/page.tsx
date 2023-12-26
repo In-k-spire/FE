@@ -1,13 +1,11 @@
 "use client";
 import OAuthBtn from "@/components/button/oauth";
-import useSideBar from "../hooks/useSideBar";
 import { FaGithub } from "react-icons/fa";
 import { FcGoogle } from "react-icons/fc";
 import BtnLayout from "@/components/button";
 import Lottie from "react-lottie-player";
 import ReadingJson from "../assets/reading.json";
 export default function Home() {
-  const { toggleIsOpen } = useSideBar();
   return (
     <div className="m-16 flex justify-evenly">
       <div className="flex flex-col justify-center gap-12">

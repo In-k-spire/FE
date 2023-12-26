@@ -1,4 +1,4 @@
-import sidebarAtomState from "@/store";
+import sidebarAtomState from "@/store/sidebar";
 import { useRecoilState } from "recoil";
 
 const useSideBar = () => {

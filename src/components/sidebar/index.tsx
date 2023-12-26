@@ -30,6 +30,7 @@ const SideBar = () => {
           src="https://i.ytimg.com/vi/a6Tvy1tubRs/mqdefault.jpg"
           width={0}
           height={0}
+          loading="eager"
           sizes="100vw"
           className="h-12 w-12 rounded-full"
         />
@@ -40,10 +41,10 @@ const SideBar = () => {
           </span>
         </div>
       </div>
-      <Menu icon={<RxDashboard />} title="홈" />
-      <Menu icon={<IoBookOutline />} title="독후감" />
-      <Menu icon={<GoGraph />} title="통계" />
-      <Menu icon={<IoSettingsOutline />} title="설정" />
+      <Menu icon={<RxDashboard />} title="홈" href="/" />
+      <Menu icon={<IoBookOutline />} title="독후감" href="/report" />
+      <Menu icon={<GoGraph />} title="통계" href="/stat" />
+      <Menu icon={<IoSettingsOutline />} title="설정" href="settings" />
     </div>
   );
 };
