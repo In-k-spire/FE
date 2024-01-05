@@ -18,7 +18,13 @@ const defaultValue: BookProps = {
 };
 
 export const booksAtomState = atom<BookProps[]>({
-  default: [defaultValue, defaultValue, defaultValue],
+  default: [
+    defaultValue,
+    defaultValue,
+    defaultValue,
+    defaultValue,
+    defaultValue,
+  ],
   key: "books",
   effects_UNSTABLE: [persistAtom],
 });
