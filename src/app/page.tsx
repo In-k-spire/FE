@@ -7,7 +7,7 @@ import Lottie from "react-lottie-player";
 import ReadingJson from "../assets/reading.json";
 export default function Home() {
   return (
-    <div className="m-16 flex justify-evenly">
+    <div className="flex justify-evenly">
       <div className="flex flex-col justify-center gap-12">
         <span className="whitespace-nowrap  text-[54px] font-semibold leading-[1.2] tracking-wider">
           <p>책을 읽고</p>
@@ -22,7 +22,7 @@ export default function Home() {
             <FcGoogle size="1.25rem" />
           </OAuthBtn>
         </div>
-        <BtnLayout className="bg-white hover:text-white h-12 w-48 text-lg font-semibold text-primary duration-200 hover:bg-primary">
+        <BtnLayout className="h-12 w-48 bg-white text-lg font-semibold text-primary duration-200 hover:bg-primary hover:text-white">
           Start Now
         </BtnLayout>
       </div>

@@ -3,17 +3,13 @@ import { useRecoilState } from "recoil";
 
 const useSideBar = () => {
   const [sidebar, setSidebar] = useRecoilState(sidebarAtomState);
-  const { page, isOpen } = sidebar;
-
-  const toggleIsOpen = () => {
-    setSidebar((prev) => ({ ...prev, isOpen: !prev.isOpen }));
-  };
+  const { page } = sidebar;
 
   const changePage = (newPage: string) => {
     setSidebar((prev) => ({ ...prev, page: newPage }));
   };
 
-  return { page, isOpen, toggleIsOpen, changePage };
+  return { page, changePage };
 };
 
 export default useSideBar;

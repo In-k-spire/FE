@@ -1,7 +1,9 @@
 "use client";
+import Header from "@/components/header";
 import "./globals.css";
 import { RecoilRoot } from "recoil";
-import { Sidebar } from "@/components/sidebar";
+import Link from "next/link";
+
 export default function RootLayout({
   children,
 }: {
@@ -10,14 +12,16 @@ export default function RootLayout({
   return (
     <RecoilRoot>
       <html lang="en">
-        <body className="flex">
-          <Sidebar>
-            <Sidebar.Menu>HI</Sidebar.Menu>
-          </Sidebar>
-          <div className="bg-background/white flex flex-1 flex-col overflow-scroll">
-            <div className="bg-white h-16 w-full shadow-sm"></div>
-            <div className="flex-1 px-12 py-6">{children}</div>
-          </div>
+        <body className="flex flex-1 flex-col overflow-scroll bg-background/white">
+          <Header>
+            <Header.Menu link="/">홈</Header.Menu>
+            <Header.Menu link="/report">독후감 작성</Header.Menu>
+            <Header.DropDown text="통계">
+              <Header.Menu link="">주간 통계 확인</Header.Menu>
+              <Header.Menu link="">월간 통계 확인</Header.Menu>
+            </Header.DropDown>
+          </Header>
+          <div className="flex-1 px-24 py-6">{children}</div>
         </body>
       </html>
     </RecoilRoot>

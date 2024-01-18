@@ -10,7 +10,7 @@ interface SideBar {
 const sidebarAtomState = atom<SideBar>({
   default: {
     isOpen: true,
-    page: "홈",
+    page: "/",
   },
   key: "side",
   effects_UNSTABLE: [persistAtom],
