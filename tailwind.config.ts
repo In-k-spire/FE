@@ -6,6 +6,7 @@ const config: Config = {
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
+  
   theme: {
     colors: {
       primary: "#50C850",
@@ -18,6 +19,21 @@ const config: Config = {
       description: "#666666",
     },
     extend: {
+      keyframes : {
+        flip : {
+          from : {
+            transform : "perspective(1000px) rotateY(0deg)",
+            
+          },
+          
+          to :  {
+            transform : "perspective(1000px) rotateY(-180deg)"  
+          }
+        }
+      },
+      animation : {
+        flip : "flip 2s"
+      },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic":

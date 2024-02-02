@@ -5,7 +5,7 @@ const HeaderMain = ({ children }: { children: React.ReactNode }) => {
 
   return (
     <div
-      className={`flex h-16 w-full items-center  px-24 ${
+      className={`flex min-h-[4rem] w-full items-center  px-24 ${
         y >= 300 ? "none" : "bg-white"
       }`}
     >
