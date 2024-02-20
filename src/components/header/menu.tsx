@@ -9,15 +9,13 @@ const HeaderMenu = ({
   link: string;
 }) => {
   const { page, changePage } = useSideBar();
-  console.log(children);
+
   return (
     <Link
       href={link}
       className={`${
-        page == link
-          ? "font-semibold text-primary"
-          : "text-black hover:font-semibold hover:text-primary"
-      } text-lg duration-300`}
+        page == link ? "text-primary" : "text-black hover:text-primary"
+      } text-xl duration-300`}
       onClick={() => changePage(link)}
     >
       {children}
