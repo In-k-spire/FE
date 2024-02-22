@@ -1,6 +1,7 @@
 import ScrollChain from "@/utils/scrollChain";
 import CateItem from "./cateItem";
 import { useRef } from "react";
+import Link from "next/link";
 
 const CategoryMain = () => {
   const divRef = useRef(null);
@@ -27,7 +28,11 @@ const CategoryMain = () => {
     "동물농장",
     "물고기의 외식",
   ].map((item, idx) => {
-    return <CateItem title={item} key={idx} />;
+    return (
+      <Link href={"/report/2/1"}>
+        <CateItem title={item} key={idx} />
+      </Link>
+    );
   });
 
   return (
