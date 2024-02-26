@@ -3,6 +3,7 @@ import Header from "@/components/header";
 import "./globals.css";
 import { RecoilRoot } from "recoil";
 import Link from "next/link";
+import { AnimatePresence } from "framer-motion";
 
 export default function RootLayout({
   children,
@@ -10,6 +11,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
+    // <AnimatePresence
+    //   initial={false}
+    //   onExitComplete={() => window.scrollTo(0, 0)}
+    // >
     <RecoilRoot>
       <html lang="en">
         <body className="flex flex-col bg-background/white">
@@ -27,5 +32,6 @@ export default function RootLayout({
         </body>
       </html>
     </RecoilRoot>
+    // </AnimatePresence>
   );
 }

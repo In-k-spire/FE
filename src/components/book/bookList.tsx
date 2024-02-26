@@ -1,6 +1,6 @@
 import { BookProps } from "@/type/book.type";
 import Link from "next/link";
-import BookLayout from "./bookItem";
+import BookLayout from "./bookLayout";
 import Image from "next/image";
 
 const BookList = ({

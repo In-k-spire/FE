@@ -2,9 +2,11 @@ import ScrollChain from "@/utils/scrollChain";
 import CateItem from "./cateItem";
 import { useRef } from "react";
 import Link from "next/link";
+import useBook from "@/hooks/useBook";
 
-const CategoryMain = () => {
+const CategoryList = () => {
   const divRef = useRef(null);
+  const { book, setBook } = useBook();
   ScrollChain(divRef);
   const Test = [
     "어린 왕자",
@@ -29,15 +31,18 @@ const CategoryMain = () => {
     "물고기의 외식",
   ].map((item, idx) => {
     return (
-      <Link href={"/report/2/1"}>
+      <Link
+        href={`/report/2/${item}`}
+        onClick={() => setBook({ title: item })}
+        onMouseEnter={() => setBook({ title: item })}
+      >
         <CateItem title={item} key={idx} />
       </Link>
     );
   });
 
   return (
-    <div className="relative flex h-full justify-between overflow-hidden">
-      <div className="h-[20rem] w-[10rem] border">HIHI</div>
+    <div className="relative h-full w-full overflow-hidden ">
       <div
         className="absolute right-0 flex flex-col items-end gap-4 duration-300"
         ref={divRef}
@@ -48,4 +53,4 @@ const CategoryMain = () => {
   );
 };
 
-export default CategoryMain;
+export default CategoryList;

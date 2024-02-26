@@ -1,4 +1,4 @@
-import BookLayout from "@/components/book/bookItem";
+import BookLayout from "@/components/book/bookLayout";
 import BookList from "@/components/book/bookList";
 
 export default function Report() {

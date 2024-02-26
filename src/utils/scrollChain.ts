@@ -5,12 +5,11 @@ const ScrollChain = (divRef: any) => {
     let height = 0;
     const currentHeight = divRef.current.offsetHeight;
     const layoutHeight = document.getElementById("layout")?.offsetHeight;
-    console.log(layoutHeight);
     const handleScroll = (event: any) => {
       if (layoutHeight) {
         if (
           event.deltaY > 0 &&
-          height > -currentHeight / 2 &&
+          height > -currentHeight + layoutHeight / 2 &&
           currentHeight > layoutHeight
         ) {
           height -= 100;
