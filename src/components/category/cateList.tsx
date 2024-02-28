@@ -1,53 +1,48 @@
 import ScrollChain from "@/utils/scrollChain";
 import CateItem from "./cateItem";
-import { useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import useBook from "@/hooks/useBook";
-
+import axios from "axios";
+import FormatedTitle from "@/utils/separateTitle";
 const CategoryList = () => {
   const divRef = useRef(null);
   const { book, setBook } = useBook();
+  const [test, setTest] = useState<any[]>([]);
   ScrollChain(divRef);
-  const Test = [
-    "어린 왕자",
-    "소나기",
-    "아몬드",
-    "김의관 행실록",
-    "신데렐라",
-    "태백산맥",
-    "해리 포터와 마법사의 돌",
-    "죽은 시인의 사회",
-    "백설 공주",
-    "거미의 집",
-    "노인과 바다",
-    "언어의 온도",
-    "반지의 제왕",
-    "서른 즈음에",
-    "프랑켄슈타인",
-    "아프니까 청춘이다",
-    "여행의 이유",
-    "젊은 그들의 세계",
-    "동물농장",
-    "물고기의 외식",
-  ].map((item, idx) => {
+  useEffect(() => {
+    const gkatn = async () => {
+      const res = await axios.get("/api?query=수학&display=50", {
+        headers: {
+          "X-Naver-Client-Id": "UY02C4mUhDR_oKNdNbIM",
+          "X-Naver-Client-Secret": "MfX888QnzY",
+        },
+      });
+      setTest(res.data.items);
+    };
+    gkatn();
+  }, []);
+
+  const cate = test.map((item, idx) => {
+    const format = FormatedTitle(item.title);
     return (
       <Link
-        href={`/report/2/${item}`}
-        onClick={() => setBook({ title: item })}
-        onMouseEnter={() => setBook({ title: item })}
+        href={`/report/2/${format}`}
+        onClick={() => setBook(item)}
+        onMouseEnter={() => setBook(item)}
       >
-        <CateItem title={item} key={idx} />
+        <CateItem title={format} key={idx} />
       </Link>
     );
   });
 
   return (
-    <div className="relative h-full w-full overflow-hidden ">
+    <div className="relative h-full flex-1 overflow-hidden ">
       <div
-        className="absolute right-0 flex flex-col items-end gap-4 duration-300"
+        className="absolute left-0 flex   flex-col items-start gap-4 duration-300"
         ref={divRef}
       >
-        {Test}
+        {cate}
       </div>
     </div>
   );

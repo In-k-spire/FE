@@ -1,17 +1,19 @@
 import Image from "next/image";
 
-const BookLayout = ({ image }: { image: string }) => {
+const BookLayout = ({
+  image,
+  width,
+  heigth,
+  className,
+}: {
+  image: string;
+  width: string;
+  heigth: string;
+  className?: string;
+}) => {
   return (
-    <div className="h-[16rem] w-[12rem]">
-      <Image
-        alt=""
-        src={image}
-        width={0}
-        height={0}
-        loading="eager"
-        sizes="100vw"
-        className="h-auto w-full"
-      />
+    <div className={`${width} ${heigth} ${className} relative`}>
+      <Image alt="책" src={image} fill />
     </div>
   );
 };

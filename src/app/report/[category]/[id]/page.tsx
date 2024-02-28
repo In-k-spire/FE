@@ -31,7 +31,6 @@ const BookDetail = () => {
       }}
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
-      exit={{ opacity: 0 }}
       className={`h-full ${color[random]} flex justify-center py-10`}
     >
       <div className="w-[40rem] bg-white shadow-lg">{book.title}</div>

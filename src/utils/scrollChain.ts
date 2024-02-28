@@ -3,9 +3,10 @@ import { useEffect } from "react";
 const ScrollChain = (divRef: any) => {
   useEffect(() => {
     let height = 0;
-    const currentHeight = divRef.current.offsetHeight;
-    const layoutHeight = document.getElementById("layout")?.offsetHeight;
+
     const handleScroll = (event: any) => {
+      const currentHeight = divRef.current.offsetHeight;
+      const layoutHeight = document.getElementById("layout")?.offsetHeight;
       if (layoutHeight) {
         if (
           event.deltaY > 0 &&
