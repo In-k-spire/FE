@@ -6,36 +6,37 @@ const config: Config = {
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
-  
+
   theme: {
     colors: {
       primary: "#50C850",
       secondary: "#D9D9D9",
       "grayscale/10": "#F9F9F9",
       "grayscale/20": "#E9E9E9",
-      "grayscale/30" : " #CCCCCC",
-      "grayscale/40" : "#808080",
+      "grayscale/30": " #CCCCCC",
+      "grayscale/40": "#808080",
       white: "#fff",
       black: "#000",
       "background/white": "#f5f6fb",
       description: "#666666",
     },
     extend: {
-      keyframes : {
-        flip : {
-          from : {
-            transform : "perspective(2500px) rotateY(0deg)",
-            
+      keyframes: {
+        flip: {
+          from: {
+            transform: "perspective(2000px) rotateY(0deg)",
+            "backface-visibility": "hidden",
           },
-          
-          to :  {
-            transform : "perspective(2500px) rotateY(-180deg)",
-            visibility : "hidden"
-          }
-        }
+
+          to: {
+            transform: "perspective(2000px) rotateY(-180deg)",
+            // visibility: "hidden",
+          },
+        },
       },
-      animation : {
-        flip : "flip 1s ease-in-out"
+      fontFamily: { BMHANNAAir: ["BMHANNAAir"] },
+      animation: {
+        flip: "flip 1s ease-in-out forwards",
       },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
