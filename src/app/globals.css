@@ -2,6 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 @import url(//fonts.googleapis.com/earlyaccess/hanna.css);
+@import "swiper/css";
 body,
 html,
 #__next {

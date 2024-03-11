@@ -1,5 +1,4 @@
 "use client";
-import useBook from "@/hooks/useBook";
 import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
 const color = [
@@ -20,11 +19,10 @@ const color = [
   "bg-[#2467D2]",
 ];
 const BookDetail = () => {
-  const { book } = useBook();
   const [random, setRandom] = useState(8);
   return (
     <motion.div
-      key={book.title}
+      key={"키(책 타이틀)"}
       transition={{
         ease: "easeInOut",
         duration: 0.5,
@@ -33,7 +31,7 @@ const BookDetail = () => {
       animate={{ opacity: 1 }}
       className={`h-full ${color[random]} flex justify-center py-10`}
     >
-      <div className="w-[40rem] bg-white shadow-lg">{book.title}</div>
+      <div className="w-[40rem] bg-white shadow-lg">{"타이틀 삽입"}</div>
     </motion.div>
   );
 };

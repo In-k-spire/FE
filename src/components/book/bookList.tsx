@@ -1,4 +1,4 @@
-import { BookProps } from "@/type/book.type";
+import { BookType } from "@/type/book.type";
 import Link from "next/link";
 import BookLayout from "./bookLayout";
 import Image from "next/image";
@@ -7,7 +7,7 @@ const BookList = ({
   bookList,
   category,
 }: {
-  bookList: BookProps[];
+  bookList: BookType[];
   category: string;
 }) => {
   return (
