@@ -13,7 +13,7 @@ const BookLayout = ({
 }) => {
   return (
     <div className={`${width} ${heigth} ${className} relative`}>
-      <Image alt="책" src={image} fill />
+      <Image alt="책" src={image} sizes="100%" fill />
     </div>
   );
 };
