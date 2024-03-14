@@ -10,20 +10,20 @@ export default function Home() {
     <div className="flex h-full w-full items-center justify-center">
       <div className="flex w-full justify-evenly">
         <div className="flex flex-col justify-center gap-12">
-          <span className="whitespace-nowrap  text-[54px] font-semibold leading-[1.2] tracking-wider">
+          <span className="whitespace-nowrap  text-[80px] font-semibold leading-[1.2] tracking-wider">
             <p>책을 읽고</p>
             <p>자신의 생각을</p>
             <p>정리해보세요</p>
           </span>
           <div className="flex gap-4">
             <OAuthBtn className="bg-black">
-              <FaGithub size="1.25rem" className="text-white" />
+              <FaGithub size="2rem" className="text-white" />
             </OAuthBtn>
             <OAuthBtn className="bg-white">
-              <FcGoogle size="1.25rem" />
+              <FcGoogle size="2rem" />
             </OAuthBtn>
           </div>
-          <BtnLayout className="h-12 w-48 bg-white text-lg font-semibold text-primary duration-200 hover:bg-primary hover:text-white">
+          <BtnLayout className="h-16 w-64 bg-white text-3xl font-semibold text-primary duration-200 hover:bg-primary hover:text-white">
             Start Now
           </BtnLayout>
         </div>
@@ -31,7 +31,7 @@ export default function Home() {
           loop
           play
           animationData={ReadingJson}
-          className="h-[30rem] w-[30rem]"
+          className="h-[40rem] w-[40rem]"
         />
       </div>
     </div>
