@@ -1,7 +1,8 @@
 import axios from "axios";
 
 export const server = axios.create({
-  baseURL: "",
+  baseURL: process.env.NEXT_PUBLIC_BASE_URL,
+  timeout: 15000,
 });
 
 export const naver = axios.create({
