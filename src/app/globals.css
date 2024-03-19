@@ -34,6 +34,9 @@ html * {
   -webkit-box-orient: vertical;
   word-break: keep-all;
 }
+.custom-shadow {
+  box-shadow: 20px 45px 35px rgba(0, 0, 0, 0.5);
+}
 
 .triangle {
   @apply border-b-shelfColor h-0  w-0 border-[1.5rem]  border-t-[transparent];
