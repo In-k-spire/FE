@@ -1,45 +1,15 @@
-import { Swiper, SwiperSlide } from "swiper/react";
-import { BookType } from "@/type/book.type";
-import FormatedTitle from "@/utils/separateTitle";
-const CategoryList = ({
-  setSelectedBookId,
-  books,
-}: {
-  setSelectedBookId: (v: number) => void;
-  books: BookType[];
-}) => {
-  const list = books?.map((book: BookType, idx: number) => {
-    const formatTitle = FormatedTitle(book.title);
-    return (
-      <SwiperSlide key={idx}>
-        {({ isActive }) => (
-          <div
-            className={`h-fit w-fit cursor-pointer whitespace-nowrap text-4xl font-thin text-grayscale/40 duration-300 ${
-              isActive ? "text-primary" : null
-            }`}
-          >
-            {formatTitle}
-          </div>
-        )}
-      </SwiperSlide>
-    );
-  });
+import { Shelf } from "../share/shelf";
+import { CateItem } from "./cateItem";
+
+export const CateList = () => {
   return (
-    <Swiper
-      className="flex h-full flex-1 items-center"
-      slidesPerView={15}
-      direction="vertical"
-      loop={true}
-      centeredSlides={true}
-      slideToClickedSlide={true}
-      onSlideChange={(swiperCore) => {
-        const { activeIndex } = swiperCore;
-        setSelectedBookId(activeIndex ? activeIndex : 0);
-      }}
-    >
-      {list}
-    </Swiper>
+    <div className="flex w-full flex-col">
+      <div className="grid w-full grid-cols-3 gap-8 p-12">
+        <CateItem />
+        <CateItem />
+        <CateItem />
+      </div>
+      <Shelf />
+    </div>
   );
 };
-
-export default CategoryList;

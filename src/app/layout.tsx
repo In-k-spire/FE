@@ -23,7 +23,7 @@ export default function RootLayout({
                 <Header.Menu link="">월간 통계 확인</Header.Menu>
               </Header.DropDown>
             </Header>
-            <div id="layout" className="h-full flex-1 overflow-hidden">
+            <div id="layout" className="h-full flex-1 overflow-auto">
               {children}
             </div>
           </body>

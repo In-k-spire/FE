@@ -16,6 +16,8 @@ const config: Config = {
       "grayscale/30": " #CCCCCC",
       "grayscale/40": "#808080",
       white: "#fff",
+      shelfColor: "#eae3d5",
+      shelfTextColor: "#712d11",
       black: "#000",
       "background/white": "#f5f6fb",
       description: "#666666",

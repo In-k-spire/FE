@@ -34,6 +34,11 @@ html * {
   -webkit-box-orient: vertical;
   word-break: keep-all;
 }
+
+.triangle {
+  @apply border-b-shelfColor h-0  w-0 border-[1.5rem]  border-t-[transparent];
+}
+
 @font-face {
   font-family: "BMHANNAAir";
   src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_four@1.0/BMHANNAAir.woff")
