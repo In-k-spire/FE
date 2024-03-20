@@ -10,7 +10,7 @@ const CategoryDetail = () => {
   const { data: books, isLoading } = useNaverBooks("과학", 50);
 
   return (
-    <div className={`flex h-full w-full items-center justify-between  px-24`}>
+    <div className={`flex h-full w-full items-center justify-between`}>
       <BookList setSelectedBookId={setSelectedBookId} books={books} />
       {!isLoading ? <SelectedBook book={books[selectedBookId]} /> : null}
     </div>

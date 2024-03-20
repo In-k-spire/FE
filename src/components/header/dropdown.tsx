@@ -10,7 +10,7 @@ const HeaderDropDown = ({
 }) => {
   return (
     <div className="group z-50 cursor-pointer">
-      <span className="text-2xl">{text}</span>
+      <span className="text-base md:text-lg  xl:text-2xl">{text}</span>
       <div className="pointer-events-none absolute flex flex-col gap-4 rounded-md border border-grayscale/20 bg-white px-6 py-4 opacity-0 shadow-sm duration-100 group-hover:opacity-100">
         {children}
       </div>

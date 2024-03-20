@@ -15,7 +15,7 @@ const HeaderMenu = ({
       href={link}
       className={`${
         page == link ? "text-primary" : "text-black hover:text-primary"
-      } text-2xl duration-300`}
+      } text-base duration-300 md:text-lg xl:text-2xl`}
       onClick={() => changePage(link)}
     >
       {children}

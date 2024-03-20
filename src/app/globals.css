@@ -49,3 +49,8 @@ html * {
   font-weight: normal;
   font-style: normal;
 }
+
+.swiper {
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
