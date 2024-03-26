@@ -8,21 +8,26 @@ const config: Config = {
   ],
 
   theme: {
-    colors: {
-      primary: "#50C850",
-      secondary: "#D9D9D9",
-      "grayscale/10": "#F9F9F9",
-      "grayscale/20": "#E9E9E9",
-      "grayscale/30": " #CCCCCC",
-      "grayscale/40": "#808080",
-      white: "#fff",
-      shelfColor: "#eae3d5",
-      shelfTextColor: "#06717B",
-      black: "#000",
-      "background/white": "#f5f6fb",
-      description: "#666666",
-    },
     extend: {
+      colors: {
+        primary: "#50C850",
+        secondary: "#D9D9D9",
+        "grayscale/10": "#F9F9F9",
+        "grayscale/20": "#E9E9E9",
+        "grayscale/30": " #CCCCCC",
+        "grayscale/40": "#808080",
+        shelfColor: "#eae3d5",
+        shelfTextColor: "#06717B",
+        "background/white": "#f5f6fb",
+        description: "#666666",
+      },
+      screens: {
+        "2xl": "1600px",
+      },
+      fontSize: {
+        "4.5xl": "2.625rem",
+        "5.5xl": "3.375rem",
+      },
       keyframes: {
         flip: {
           from: {

@@ -39,7 +39,7 @@ html * {
 }
 
 .triangle {
-  @apply border-b-shelfColor h-0  w-0 border-[1.5rem]  border-t-[transparent];
+  @apply border-b-shelfColor h-0  w-0 border-[1rem] lg:border-[1.25rem] 2xl:border-[1.5rem]  border-t-[transparent];
 }
 
 @font-face {

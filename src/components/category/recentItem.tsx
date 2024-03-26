@@ -1,33 +1,30 @@
 import BookLayout from "../book/bookLayout";
+import { InputLayout } from "../input";
 import { Shelf } from "../share/shelf";
 export const RecentItem = () => {
   return (
     <div className="w-full">
-      <div className="flex items-center justify-between p-12">
+      <div className="md:flex-row flex-col flex items-start md:gap-0 gap-8 md:items-center justify-between p-12">
         <div className="flex flex-col">
-          <span className="text-shelfTextColor text-[60px] font-bold leading-[1.1]">
+          <span className="text-shelfTextColor text-4.5xl md:text-5xl lg:text-5.5xl 2xl:text-6xl font-bold leading-[1.1]">
             Book of<br></br> the week
           </span>
-          <span className="mt-8 text-lg text-grayscale/40">
+          <span className="mt-8 text-base lg:text-lg text-grayscale/40">
             원하는 카테고리가 있으신가요?
           </span>
-          <input className="mt-2 h-[4rem] w-[20rem] rounded-xl p-4 text-lg shadow-md outline-none" />
+          <InputLayout  placeholder="카테고리로 검색" size="lg" />
         </div>
-        <div className="flex items-center gap-24">
+        <div className="flex items-center gap-16 xl:gap-24">
           <BookLayout
             image="https://shopping-phinf.pstatic.net/main_3248059/32480599469.20230927071226.jpg"
-
+            className="2xl:flex hidden"
             size = "xl"
           />
           <BookLayout
             image="https://shopping-phinf.pstatic.net/main_3248059/32480599469.20230927071226.jpg"
-
-           
           />
           <BookLayout
             image="https://shopping-phinf.pstatic.net/main_3248059/32480599469.20230927071226.jpg"
-            
-            
           />
         </div>
       </div>

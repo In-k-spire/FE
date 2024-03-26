@@ -4,16 +4,13 @@ import { CateItem } from "./cateItem";
 export const CateList = ({ category }: { category: string }) => {
   return (
     <div className="relative flex w-full flex-col">
-      <span className="px-12 pt-8 text-3xl">{category}</span>
-      <div className="grid h-full w-full grid-cols-[3fr_1fr] gap-12 p-12">
-        <div className="flex justify-between">
-          <CateItem />
-          <CateItem />
-          <CateItem />
-        </div>
-        <div className="flex items-center">
-          
-        </div>
+      <span className="px-12 pt-8 text-2xl xl:text-3xl">{category}</span>
+      <div className="flex h-full w-full overflow-auto p-8 lg:p-12 gap-6 lg:gap-8 2xl:gap-12">
+        <CateItem />
+        <CateItem />
+        <CateItem />
+        <CateItem />
+        <CateItem />
       </div>
       <Shelf />
     </div>

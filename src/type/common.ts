@@ -1,3 +1,4 @@
 export interface CommonProps  {
-    size?  :"sm"| "md" | 'lg' | "xl"
+    size?  :"sm"| "md" | 'lg' | "xl";
+    className? : string;
 }

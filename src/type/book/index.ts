@@ -14,5 +14,4 @@ export interface BookType {
 
 export interface BookProps extends CommonProps {
   image : string;
-  className? : string
 }
