@@ -6,7 +6,11 @@ const config: Config = {
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
-
+  safelist : [
+    {
+      pattern : /border-/,
+    }
+  ],
   theme: {
     extend: {
       colors: {
@@ -22,6 +26,7 @@ const config: Config = {
         description: "#666666",
       },
       screens: {
+        'xs' : "480px",
         "2xl": "1600px",
       },
       fontSize: {
