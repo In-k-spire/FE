@@ -5,12 +5,15 @@ export const CateList = ({ category }: { category: string }) => {
   return (
     <div className="relative flex w-full flex-col">
       <span className="px-12 pt-8 text-3xl">{category}</span>
-      <div className="flex h-full w-full gap-12 overflow-auto p-12">
-        <CateItem />
-        <CateItem />
-        <CateItem />
-        <CateItem />
-        <CateItem />
+      <div className="grid h-full w-full grid-cols-[3fr_1fr] gap-12 p-12">
+        <div className="flex justify-between">
+          <CateItem />
+          <CateItem />
+          <CateItem />
+        </div>
+        <div className="flex items-center">
+          
+        </div>
       </div>
       <Shelf />
     </div>

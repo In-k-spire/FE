@@ -16,21 +16,18 @@ export const RecentItem = () => {
         <div className="flex items-center gap-24">
           <BookLayout
             image="https://shopping-phinf.pstatic.net/main_3248059/32480599469.20230927071226.jpg"
-            className="cursor-pointer rounded-lg shadow-2xl duration-300 [&>img]:rounded-lg"
-            width="w-[20rem]"
-            heigth="h-[30rem]"
+
+            size = "xl"
           />
           <BookLayout
             image="https://shopping-phinf.pstatic.net/main_3248059/32480599469.20230927071226.jpg"
-            className="cursor-pointer rounded-lg shadow-2xl duration-300 [&>img]:rounded-lg"
-            width="w-[12rem]"
-            heigth="h-[16rem]"
+
+           
           />
           <BookLayout
             image="https://shopping-phinf.pstatic.net/main_3248059/32480599469.20230927071226.jpg"
-            className="cursor-pointer rounded-lg shadow-2xl duration-300 [&>img]:rounded-lg"
-            width="w-[12rem]"
-            heigth="h-[16rem]"
+            
+            
           />
         </div>
       </div>

@@ -1,4 +1,4 @@
-import { BookType } from "@/type/book.type";
+import { BookType } from "@/type/book";
 import { atom } from "recoil";
 import { recoilPersist } from "recoil-persist";
 

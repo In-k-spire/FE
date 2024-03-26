@@ -1,5 +1,5 @@
 import { Swiper, SwiperSlide } from "swiper/react";
-import { BookType } from "@/type/book.type";
+import { BookType } from "@/type/book";
 import FormatedTitle from "@/utils/separateTitle";
 const BookList = ({
   setSelectedBookId,

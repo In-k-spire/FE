@@ -1,4 +1,4 @@
-import { BookType } from "@/type/book.type";
+import { BookType } from "@/type/book";
 import BookLayout from "../book/bookLayout";
 
 export const SelectedBook = ({ book }: { book: BookType }) => {

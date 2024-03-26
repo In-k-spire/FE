@@ -1,19 +1,20 @@
+import { BookProps } from "@/type/book";
 import Image from "next/image";
 
 const BookLayout = ({
   image,
-  width,
-  heigth,
+  size = 'md' ,
   className,
-}: {
-  image: string;
-  width: string;
-  heigth: string;
-  className?: string;
-}) => {
+}: BookProps) => {
+  const SIZE = {
+    sm : 'w-32 h-48',
+    md : 'w-48 h-64',
+    lg : 'w-64 h-[24rem]',
+    xl : 'w-[20rem] h-[30rem]'
+  }
   return (
-    <div className={`${width} ${heigth} ${className} relative`}>
-      <Image alt="책" src={image} sizes="100%" fill />
+    <div className={`${SIZE[size]} rounded-lg relative shadow-2xl`}>
+      <Image alt="책" src={image} sizes="100%" className="rounded-lg" fill />
     </div>
   );
 };

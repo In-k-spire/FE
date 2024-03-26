@@ -38,14 +38,14 @@ export default function Home() {
         </Swiper>
 
         <div className="flex gap-4">
-          <OAuthBtn className="bg-black ">
+          <OAuthBtn color="black">
             <FaGithub className="h-6 w-6 text-white xl:h-8 xl:w-8" />
           </OAuthBtn>
-          <OAuthBtn className="bg-white">
+          <OAuthBtn color="white">
             <FcGoogle className="h-6 w-6 xl:h-8 xl:w-8" />
           </OAuthBtn>
         </div>
-        <BtnLayout className="h-12 w-48 bg-white text-xl font-semibold text-primary duration-200   hover:bg-primary hover:text-white lg:h-16 lg:w-64 xl:text-3xl">
+        <BtnLayout size = "xl" color="primary" rounded="rounded-md" filled ="ghost" >
           Start Now
         </BtnLayout>
       </div>

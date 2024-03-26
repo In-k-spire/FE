@@ -1,4 +1,4 @@
-import { BookType } from "@/type/book.type";
+import { BookType } from "@/type/book";
 import Link from "next/link";
 import BookLayout from "./bookLayout";
 import Image from "next/image";
