@@ -7,5 +7,5 @@ export const InputLayout = ({size = 'md' , placeholder,  className} : InputProps
         lg: "h-12 w-48 lg:h-14 lg:w-64 text-lg",
         xl : "h-14 w-64 lg:h-16 lg:w-[20rem] text-xl"
     }
-    return <input placeholder={placeholder} className={`p-4 rounded-md outline-none shadow-md ${SIZE[size]}`}/>
+    return <input placeholder={placeholder} className={`p-4 rounded-md outline-none shadow-md ${SIZE[size]} ${className}`}/>
 }
