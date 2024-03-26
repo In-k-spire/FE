@@ -10,14 +10,13 @@ import ReadingJson from "../assets/reading.json";
 import { quotes } from "@/store/quote";
 export default function Home() {
   return (
-    <div className="flex w-full flex-col  items-center  justify-between px-0 md:flex-row  xl:px-32">
+    <div className="flex h-full w-full flex-col  items-center  justify-between px-0 md:flex-row  xl:px-32">
       <div className="flex w-full flex-col justify-between gap-6 md:gap-8 xl:gap-12">
         <span className="whitespace-nowrap  text-[36px] font-semibold leading-[1.2] tracking-wider md:text-[48px] lg:text-[54px] xl:text-[60px]">
           <p>책을 읽고</p>
           <p>자신의 생각을</p>
           <p>정리해보세요</p>
         </span>
-
         <Swiper
           modules={[Autoplay]}
           speed={1000}
