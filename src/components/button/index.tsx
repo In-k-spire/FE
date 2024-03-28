@@ -15,7 +15,7 @@ export const BtnLayout = ({ children, size = "md", rounded = "rounded-none", fil
 
   return (
     <button
-      className={`flex items-center ${rounded} max-w-full whitespace-nowrap  py-2 justify-center shadow-md ${COLOR[filled]} ${SIZE[size]} w-fit h-fit`}
+      className={`flex items-center ${rounded} max-w-full whitespace-nowrap gap-2  py-2 justify-center shadow-lg ${COLOR[filled]} ${SIZE[size]} w-fit h-fit`}
       {...props}
     >
       {children}

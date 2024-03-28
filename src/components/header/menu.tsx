@@ -8,15 +8,12 @@ const HeaderMenu = ({
   children: React.ReactNode;
   link: string;
 }) => {
-  const { page, changePage } = useSideBar();
 
   return (
     <Link
       href={link}
-      className={`${
-        page == link ? "text-primary" : "text-black hover:text-primary"
-      } text-base duration-300 md:text-lg xl:text-2xl`}
-      onClick={() => changePage(link)}
+      className="
+        text-black hover:text-primary text-base duration-300 md:text-lg xl:text-2xl"
     >
       {children}
     </Link>

@@ -11,20 +11,15 @@
   "dependencies": {
     "@tanstack/react-query": "^5.26.3",
     "@types/axios": "^0.14.0",
-    "@types/lodash": "^4.17.0",
     "@types/react-icons": "^3.0.0",
-    "@types/react-slick": "^0.23.13",
     "@types/recoil": "^0.0.9",
     "@types/swiper": "^6.0.0",
     "framer-motion": "^11.0.5",
-    "lodash": "^4.17.21",
     "next": "14.0.4",
     "react": "^18",
     "react-dom": "^18",
     "react-lottie-player": "^1.5.5",
-    "react-slick": "^0.30.2",
     "recoil-persist": "^5.1.0",
-    "slick-carousel": "^1.8.1",
     "tailwind-scrollbar-hide": "^1.1.7"
   },
   "devDependencies": {

@@ -7,9 +7,10 @@ const config: Config = {
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   safelist : [
-    {
-      pattern : /border-/,
-    }
+    
+      {pattern : /border-/},
+      {pattern : /bg-/ }
+    
   ],
   theme: {
     extend: {
@@ -46,7 +47,7 @@ const config: Config = {
           },
         },
       },
-      fontFamily: { BMHANNAAir: ["BMHANNAAir"] },
+      fontFamily: { BMHANNAAir: ["BMHANNAAir"], NanumSquareneo : ['NanumSquareNeo-Variable'] },
       animation: {
         flip: "flip 1s ease-in-out forwards",
       },

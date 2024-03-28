@@ -11,7 +11,7 @@ html,
 }
 
 html * {
-  @apply font-BMHANNAAir;
+  @apply font-NanumSquareneo;
 }
 
 .backface-visible {
@@ -42,6 +42,12 @@ html * {
   @apply border-b-shelfColor h-0  w-0 border-[1rem] lg:border-[1.25rem] 2xl:border-[1.5rem]  border-t-[transparent];
 }
 
+@font-face {
+    font-family: 'NanumSquareNeo-Variable';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_11-01@1.0/NanumSquareNeo-Variable.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
 @font-face {
   font-family: "BMHANNAAir";
   src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_four@1.0/BMHANNAAir.woff")
