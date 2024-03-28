@@ -1,4 +1,3 @@
-import useSideBar from "@/hooks/useSideBar";
 import Link from "next/link";
 
 const HeaderMenu = ({

@@ -9,9 +9,9 @@ export const CateList = ({ category }: { category: string }) => {
       <div className="flex gap-4 px-8 pt-8 text-2xl lg:px-12 xl:text-3xl">
         <span>{category}</span>
         <Link href = {`/report/${category}`}>
-          <BtnLayout size="sm" color="shelfTextColor" rounded="rounded-full">
+          <BtnLayout size="sm" color="shelfTextColor" rounded="rounded-full" className="group">
             더보기
-            <FaArrowRight />
+            <FaArrowRight className = "group-hover:translate-x-2 duration-300"/>
           </BtnLayout>
         </Link>
       </div>
