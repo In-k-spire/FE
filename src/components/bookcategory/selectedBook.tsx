@@ -4,7 +4,7 @@ import BookLayout from "../book/bookLayout";
 export const SelectedBook = ({ book }: { book: BookType }) => {
   return (
     <div className="group relative">
-      <div className="transform-preserve3d relative z-10 origin-top-left border rounded-lg border-secondary shadow-lg group-hover:animate-flip">
+      <div className="transform-preserve3d relative z-10 origin-top-left border rounded-lg border-secondary shadow-lg group-hover:transform-[perspective(2000)_rotateY(0deg)] group-hover:backface-visibility-hidden">
         <BookLayout
           image={book?.image}
           className="backface-invisible z-10"

@@ -1,6 +1,8 @@
-import { Swiper, SwiperSlide } from "swiper/react";
+import { Swiper, SwiperRef, SwiperSlide } from "swiper/react";
 import { BookType } from "@/type/book";
 import FormatedTitle from "@/utils/separateTitle";
+import { useRef } from "react";
+import { useSwipeOnScroll } from "@/hooks/useSwipeOnScroll";
 const BookList = ({
   setSelectedBookId,
   books,
@@ -8,6 +10,8 @@ const BookList = ({
   setSelectedBookId: (v: number) => void;
   books: BookType[];
 }) => {
+  const swiperRef = useRef<SwiperRef>(null);
+  useSwipeOnScroll(swiperRef)
   const list = books?.map((book: BookType, idx: number) => {
     const formatTitle = FormatedTitle(book.title);
     return (
@@ -26,10 +30,12 @@ const BookList = ({
   });
   return (
     <Swiper
+      ref = {swiperRef}
       className="flex h-full flex-1 items-center"
       slidesPerView={15}
       direction="vertical"
       // loop={true}
+     
       centeredSlides={true}
       slideToClickedSlide={true}
       onSlideChange={(swiperCore) => {
