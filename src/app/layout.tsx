@@ -18,10 +18,7 @@ export default function RootLayout({
             <Header>
               <Header.Menu link="/">홈</Header.Menu>
               <Header.Menu link="/report">독후감 작성</Header.Menu>
-              <Header.DropDown text="통계">
-                <Header.Menu link="">주간 통계 확인</Header.Menu>
-                <Header.Menu link="">월간 통계 확인</Header.Menu>
-              </Header.DropDown>
+              <Header.Menu link="/stat">통계</Header.Menu>
             </Header>
             <div
               id="layout"
