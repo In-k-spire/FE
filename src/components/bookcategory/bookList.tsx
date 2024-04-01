@@ -3,6 +3,7 @@ import { BookType } from "@/type/book";
 import FormatedTitle from "@/utils/separateTitle";
 import { useRef } from "react";
 import { useSwipeOnScroll } from "@/hooks/useSwipeOnScroll";
+import Link from "next/link";
 const BookList = ({
   setSelectedBookId,
   books,
@@ -17,13 +18,14 @@ const BookList = ({
     return (
       <SwiperSlide key={idx}>
         {({ isActive }) => (
-          <div
+          <Link
+            href='#'
             className={`h-fit w-fit cursor-pointer whitespace-nowrap text-4xl font-thin text-grayscale/40 duration-300 ${
               isActive ? "text-primary" : null
             }`}
           >
             {formatTitle}
-          </div>
+          </Link>
         )}
       </SwiperSlide>
     );
@@ -32,11 +34,10 @@ const BookList = ({
     <Swiper
       ref = {swiperRef}
       className="flex h-full flex-1 items-center"
-      slidesPerView={15}
+      slidesPerView={'auto'}
       direction="vertical"
-      // loop={true}
-     
-      centeredSlides={true}
+      centeredSlides = {true}
+      spaceBetween={10}
       slideToClickedSlide={true}
       onSlideChange={(swiperCore) => {
         const { activeIndex } = swiperCore;

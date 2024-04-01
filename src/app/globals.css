@@ -60,7 +60,9 @@ html * {
   margin-left: 0 !important;
   margin-right: 0 !important;
 }
-
+.swiper-slide {
+  height: auto !important;
+}
 *::-webkit-scrollbar {
     width: 6px;
     height: 6px;
