@@ -12,7 +12,6 @@ import { server } from "@/api/instance/instance";
 import { useUser } from "@/hooks/useUser";
 
 export default function Home() {
-  useUser('github');
   return (
     <div className="flex h-full w-full flex-col  items-center  justify-between px-0 md:flex-row  xl:px-32">
       <div className="flex w-full flex-col justify-between gap-6 md:gap-8 xl:gap-12">
@@ -42,10 +41,10 @@ export default function Home() {
         </Swiper>
 
         <div className="flex gap-4">
-          <OAuthBtn color="black" onClick={() => console.log(server.get('/auth/google/uri?redirectUri=inkspire.kro.kr'))}>
+          <OAuthBtn provider="github">
             <FaGithub className="h-6 w-6 text-white xl:h-8 xl:w-8" />
           </OAuthBtn>
-          <OAuthBtn color="white">
+          <OAuthBtn provider="google">
             <FcGoogle className="h-6 w-6 xl:h-8 xl:w-8" />
           </OAuthBtn>
         </div>

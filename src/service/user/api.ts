@@ -1,8 +1,16 @@
 import { server } from "@/api/instance/instance"
-import { OAuthType } from "@/type/oauth";
+import { LoginProps } from "@/type/user/user";
+import axios from "axios";
 
-export const getUser = async (oauth : string) => {
-    const {data : redirectUrl} = await server.get(`/auth/${oauth}`);
-    console.log(redirectUrl)
-    return 'data'
+
+export const getUser = async () => {
+   const {data } = await server.get('/')
+}
+
+export const login = async (props : LoginProps) => {
+    const {data} = await server.post(`/auth/${props.provider}/token`, {
+        authorizationCode : props.code,
+        redirectUri : "/"
+    })
+    return data;
 }

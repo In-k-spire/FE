@@ -2,10 +2,10 @@ import { useQuery } from "@tanstack/react-query"
 import { getUser } from "./api"
 import { OAuthType } from "@/type/oauth"
 
-export const useUserQuery = (oauth : string) => {
+export const useUserQuery = () => {
     const {data , ...restQuery} = useQuery({
         queryKey : ['user'],
-        queryFn : () => getUser(oauth),
+        queryFn : getUser,
     })
     return {data : data, ...restQuery}
 }
