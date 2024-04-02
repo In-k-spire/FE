@@ -39,14 +39,15 @@ html * {
 }
 
 .triangle {
-  @apply border-b-shelfColor h-0  w-0 border-[1rem] lg:border-[1.25rem] 2xl:border-[1.5rem]  border-t-[transparent];
+  @apply h-0 w-0  border-[1rem] border-b-shelfColor border-t-[transparent] lg:border-[1.25rem]  2xl:border-[1.5rem];
 }
 
 @font-face {
-    font-family: 'NanumSquareNeo-Variable';
-    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_11-01@1.0/NanumSquareNeo-Variable.woff2') format('woff2');
-    font-weight: normal;
-    font-style: normal;
+  font-family: "NanumSquareNeo-Variable";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_11-01@1.0/NanumSquareNeo-Variable.woff2")
+    format("woff2");
+  font-weight: normal;
+  font-style: normal;
 }
 @font-face {
   font-family: "BMHANNAAir";
@@ -55,8 +56,7 @@ html * {
   font-weight: normal;
   font-style: normal;
 }
-
-.swiper {
+*/ .swiper {
   margin-left: 0 !important;
   margin-right: 0 !important;
 }
@@ -64,7 +64,6 @@ html * {
   height: auto !important;
 }
 *::-webkit-scrollbar {
-    width: 6px;
-    height: 6px;
+  width: 6px;
+  height: 6px;
 }
-
