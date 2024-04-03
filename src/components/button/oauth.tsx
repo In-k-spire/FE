@@ -1,3 +1,4 @@
+"use client"
 import { server } from "@/api/instance/instance";
 import { AxiosResponse } from "axios";
 import { ReactNode, useEffect, useState } from "react";

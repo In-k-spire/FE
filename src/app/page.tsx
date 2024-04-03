@@ -1,4 +1,4 @@
-"use client";
+"use client"
 import OAuthBtn from "@/components/button/oauth";
 import { FaGithub } from "react-icons/fa";
 import { FcGoogle } from "react-icons/fc";
@@ -8,8 +8,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay } from "swiper/modules";
 import ReadingJson from "../assets/reading.json";
 import { quotes } from "@/store/quote";
-import { server } from "@/api/instance/instance";
-import { useUser } from "@/hooks/useUser";
+
 
 export default function Home() {
   return (

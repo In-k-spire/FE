@@ -1,3 +1,4 @@
+"use client"
 import { GetFirstRoute } from "@/utils/getFirstRoute";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
