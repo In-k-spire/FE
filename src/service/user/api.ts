@@ -1,6 +1,6 @@
 import { server } from "@/api/instance/instance"
 import { LoginProps } from "@/type/user/user";
-import axios from "axios";
+
 
 
 export const getUser = async () => {
