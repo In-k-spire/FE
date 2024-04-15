@@ -1,17 +1,33 @@
-import type { Config } from "tailwindcss";
 
+import type { Config } from "tailwindcss";
+export const colors = [
+  "bg-[#F75C4F]",
+  "bg-[#EC80AF]",
+  "bg-[#82C0D0]",
+  "bg-[#81C1F2]",
+  "bg-[#A1D461]",
+  "bg-[#F2693E]",
+  "bg-[#5783C8]",
+  "bg-[#FFB244]",
+  "bg-[#80BFD2]",
+  "bg-[#EFA047]",
+  "bg-[#B8A2FE]",
+  "bg-[#6DCC7A]",
+  "bg-[#EB4D55]",
+  "bg-[#F1D01B]",
+  "bg-[#2467D2]",
+];
 const config: Config = {
   content: [
     "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
-  safelist : [
-    
-      {pattern : /border-/},
-      {pattern : /bg-/ , variants : ['hover']},
-      
-    
+  safelist: [
+    { pattern: /border-/ },
+    { pattern: /bg-/, variants: ["hover"] },
+    { pattern : /h-/ },
+    ...colors.map(color => color)
   ],
   theme: {
     extend: {
@@ -28,7 +44,7 @@ const config: Config = {
         description: "#666666",
       },
       screens: {
-        'xs' : "480px",
+        xs: "480px",
         "2xl": "1600px",
       },
       fontSize: {
@@ -48,7 +64,10 @@ const config: Config = {
           },
         },
       },
-      fontFamily: { BMHANNAAir: ["BMHANNAAir"], NanumSquareneo : ['NanumSquareNeo-Variable'] },
+      fontFamily: {
+        BMHANNAAir: ["BMHANNAAir"],
+        NanumSquareneo: ["NanumSquareNeo-Variable"],
+      },
       animation: {
         flip: "flip 1s ease-in-out forwards",
       },

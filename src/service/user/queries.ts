@@ -8,5 +8,5 @@ export const useUserQuery = () => {
         queryFn : getUser,
         retry : 1
     })
-    return {data : data, ...restQuery}
+    return {data, ...restQuery}
 }

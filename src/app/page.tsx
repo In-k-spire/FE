@@ -4,22 +4,22 @@ import { FaGithub } from "react-icons/fa";
 import { FcGoogle } from "react-icons/fc";
 import BtnLayout from "@/components/button";
 import Lottie from "react-lottie-player";
-import { Swiper, SwiperSlide } from "swiper/react";
+import { SwiperSlide } from "swiper/react";
 import { Autoplay } from "swiper/modules";
 import ReadingJson from "../assets/reading.json";
 import { quotes } from "@/store/quote";
-
-
+import { CustomSwiper } from "@/components/share/customSwiper";
 export default function Home() {
   return (
     <div className="flex h-full w-full flex-col  items-center  justify-between px-0 md:flex-row  xl:px-32">
       <div className="flex w-full flex-col justify-between gap-6 md:gap-8 xl:gap-12">
-        <span className="whitespace-nowrap leading-[1.1] text-4xl font-semibold  tracking-wider md:text-5xl lg:text-5.5xl xl:text-6xl">
+        <span className="whitespace-nowrap text-4xl font-semibold leading-[1.1]  tracking-wider md:text-5xl lg:text-5.5xl xl:text-6xl">
           <p>책을 읽고</p>
           <p>자신의 생각을</p>
           <p>정리해보세요</p>
         </span>
-        <Swiper
+       
+        <CustomSwiper
           modules={[Autoplay]}
           speed={1000}
           autoplay={{ delay: 4000 }}
@@ -37,7 +37,7 @@ export default function Home() {
               <p className="mt-4">{person}</p>
             </SwiperSlide>
           ))}
-        </Swiper>
+        </CustomSwiper>
 
         <div className="flex gap-4">
           <OAuthBtn provider="github">
@@ -47,7 +47,12 @@ export default function Home() {
             <FcGoogle className="h-6 w-6 xl:h-8 xl:w-8" />
           </OAuthBtn>
         </div>
-        <BtnLayout size = "xl" color="primary" rounded="rounded-md" filled ="ghost" >
+        <BtnLayout
+          size="xl"
+          color="primary"
+          rounded="rounded-md"
+          filled="ghost"
+        >
           Start Now
         </BtnLayout>
       </div>

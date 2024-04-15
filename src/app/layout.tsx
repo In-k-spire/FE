@@ -12,7 +12,7 @@ export default function RootLayout({
   return (
     <LibRegistry>
       <html lang="en">
-        <body className="flex flex-col bg-background/white">
+        <body className="relative flex flex-col  bg-background/white">
           <Header>
             <Header.Menu link="/">홈</Header.Menu>
             <Header.Menu link="/report">독후감 작성</Header.Menu>

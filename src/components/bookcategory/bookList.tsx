@@ -19,7 +19,7 @@ const BookList = ({
       <SwiperSlide key={idx}>
         {({ isActive }) => (
           <Link
-            href='#'
+            href=''
             className={`h-fit w-fit cursor-pointer whitespace-nowrap text-4xl font-thin text-grayscale/40 duration-300 ${
               isActive ? "text-primary" : null
             }`}
@@ -30,6 +30,7 @@ const BookList = ({
       </SwiperSlide>
     );
   });
+
   return (
     <Swiper
       ref = {swiperRef}

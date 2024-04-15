@@ -1,25 +1,16 @@
 "use client";
+import BookLayout from "@/components/book/bookLayout";
+import { ReportItem } from "@/components/report/reportItem";
+import { useRandomBg } from "@/hooks/useRandomBg";
 import { motion, AnimatePresence } from "framer-motion";
-import { useState } from "react";
-const color = [
-  "bg-[#F75C4F]",
-  "bg-[#EC80AF]",
-  "bg-[#82C0D0]",
-  "bg-[#81C1F2]",
-  "bg-[#A1D461]",
-  "bg-[#F2693E]",
-  "bg-[#5783C8]",
-  "bg-[#FFB244]",
-  "bg-[#80BFD2]",
-  "bg-[#EFA047]",
-  "bg-[#B8A2FE]",
-  "bg-[#6DCC7A]",
-  "bg-[#EB4D55]",
-  "bg-[#F1D01B]",
-  "bg-[#2467D2]",
-];
-const BookDetail = () => {
-  const [random, setRandom] = useState(8);
+
+const BookDetail = ({
+  params
+}: {
+  params: { slug: string };
+}) => {
+  const { bg } = useRandomBg();
+  console.log(params)
   return (
     <motion.div
       key={"키(책 타이틀)"}
@@ -29,9 +20,36 @@ const BookDetail = () => {
       }}
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
-      className={`h-full ${color[random]} flex justify-center py-10`}
+      className={`absolute left-0 top-0 h-full w-full ${bg} `}
     >
-      <div className="w-[40rem] bg-white shadow-lg">{"타이틀 삽입"}</div>
+      <div className="relative flex h-full w-full justify-center py-10 ">
+        <div className="absolute right-16 top-10"></div>
+        <div className="flex w-[45rem] flex-col bg-white p-8 shadow-2xl">
+          <span className="text-4xl font-light">떨림과 울림</span>
+          <span className="text-grayscale/40">김상욱 / 동아시아</span>
+          <div className="mt-8 flex gap-4">
+            <BookLayout
+              image="https://shopping-phinf.pstatic.net/main_3248059/32480599469.20230927071226.jpg"
+              size="lg"
+            />
+            <div className="flex-1">
+              <span>
+                떨림과 울림 떨림과 울림 떨림과 울림 떨림과 울림 떨림과 울림
+                떨림과 울림 떨림과 울림 떨림과 울림 떨림과 울림 떨림과 울림
+                떨림과 울림 떨림과 울림 떨림과 울림 떨림과 울림 떨림과 울림
+                떨림과 울림 떨림과 울림
+              </span>
+              <div></div>
+            </div>
+          </div>
+          <ReportItem
+            title="독후감 1"
+            date={new Date()}
+            page="1"
+            desc="독후감 본문"
+          />
+        </div>
+      </div>
     </motion.div>
   );
 };

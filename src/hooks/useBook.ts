@@ -1,10 +1,13 @@
-// import { bookAtomState } from "@/store/book";
-// import { useRecoilState } from "recoil";
+import { useBookQuery } from "@/service/book/queries";
 
-// const useBook = () => {
-//   const [book, setBook] = useRecoilState(bookAtomState);
 
-//   return { book, setBook };
-// };
+const useBook = (id : number) => {
+  
+  const {data, isError} = useBookQuery(id);
 
-// export default useBook;
+
+
+  return {book : data };
+};
+
+export default useBook;
