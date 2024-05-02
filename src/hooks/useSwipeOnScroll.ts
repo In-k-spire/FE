@@ -1,7 +1,7 @@
 import { RefObject, useEffect } from "react";
 import { SwiperRef } from "swiper/react";
 
-export const useSwipeOnScroll = (swiperRef: RefObject<SwiperRef>| null) => {
+export const useSwipeOnScroll = (swiperRef: RefObject<SwiperRef> | null) => {
   useEffect(() => {
     const handleScroll = (event: WheelEvent) => {
       if (swiperRef?.current) {
