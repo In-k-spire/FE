@@ -62,6 +62,13 @@ html * {
 .swiper-slide {
   height: auto !important;
 }
+.horizontal .swiper-wrapper {
+  display: flex;
+}
+.swiper-wrapper {
+  display: inline;
+  height: inherit !important;
+}
 *::-webkit-scrollbar {
   width: 6px;
   height: 6px;

@@ -12,15 +12,15 @@ const BookList = ({
   books: BookType[];
 }) => {
   const swiperRef = useRef<SwiperRef>(null);
-  useSwipeOnScroll(swiperRef)
+  useSwipeOnScroll(swiperRef);
   const list = books?.map((book: BookType, idx: number) => {
     const formatTitle = FormatedTitle(book.title);
     return (
       <SwiperSlide key={idx}>
         {({ isActive }) => (
           <Link
-            href=''
-            className={`h-fit w-fit cursor-pointer whitespace-nowrap text-4xl font-thin text-grayscale/40 duration-300 ${
+            href=""
+            className={`h-fit w-fit cursor-pointer text-2xl font-thin  text-grayscale/40 duration-300 md:text-3xl lg:text-4xl ${
               isActive ? "text-primary" : null
             }`}
           >
@@ -33,12 +33,12 @@ const BookList = ({
 
   return (
     <Swiper
-      ref = {swiperRef}
-      className="flex h-full flex-1 items-center"
-      slidesPerView={'auto'}
+      ref={swiperRef}
+      className="flex h-full flex-1 items-center overflow-hidden"
+      slidesPerView={"auto"}
       direction="vertical"
-      centeredSlides = {true}
-      spaceBetween={10}
+      centeredSlides={true}
+      spaceBetween={15}
       slideToClickedSlide={true}
       onSlideChange={(swiperCore) => {
         const { activeIndex } = swiperCore;
