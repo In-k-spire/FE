@@ -11,6 +11,7 @@
   "dependencies": {
     "@tanstack/react-query": "^5.26.3",
     "@types/axios": "^0.14.0",
+    "@types/dom-view-transitions": "^1.0.4",
     "@types/react-icons": "^3.0.0",
     "@types/react-toastify": "^4.1.0",
     "@types/recoil": "^0.0.9",
