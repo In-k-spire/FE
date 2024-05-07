@@ -1,23 +1,48 @@
 import { ReportType } from "@/type/report";
 import { useState } from "react";
-
-export const ReportItem = ({title, date, page, desc} : ReportType ) => {
-    const [isOpen, setIsOpen] = useState(false);
-    console.log(isOpen)
-    return (
-      <>
-        <div
-          className="h-16 w-full rounded-md border border-grayscale/30"
-          onClick={() => setIsOpen((prev) => !prev)}
-        ></div>
-        <div
-          className={`mt-2 w-full overflow-hidden rounded-md  duration-300   ${
-            isOpen ? "h-32 border border-grayscale/30" : "h-0 border-none"
+import { FaAngleDown } from "react-icons/fa6";
+import { BsThreeDotsVertical } from "react-icons/bs";
+export const ReportItem = ({ title, date, page, desc }: ReportType) => {
+  const [isOpen, setIsOpen] = useState(false);
+  console.log(isOpen);
+  return (
+    <>
+      <div
+        className={`group ${
+          isOpen
+            ? "rounded-b-none border-2 border-primary"
+            : "border border-grayscale/30"
+        } relative flex h-16 w-full cursor-pointer items-center justify-between rounded-md  px-4`}
+        onClick={() => setIsOpen((prev) => !prev)}
+      >
+        <FaAngleDown
+          className={`absolute bottom-2 left-1/2 -translate-x-1/2 text-sm text-grayscale/30 duration-300 group-hover:text-black ${
+            isOpen ? "rotate-180 text-black" : "rotate-0 "
           }`}
-        >
-          HIHI
+        />
+        <span className="text-lg font-bold">{title}</span>
+        <div className="flex items-center gap-4">
+          <span className="text-sm">{date.toLocaleDateString()}</span>
+          <div className="rounded-full bg-primary px-3 py-1 text-xs text-white">
+            {page}p ~ {page}p
+          </div>
+          <div
+            className="flex h-8 w-8 cursor-pointer  items-center justify-center rounded-full duration-300 hover:bg-grayscale/20"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <BsThreeDotsVertical />
+          </div>
         </div>
-      </>
-    );
-    
-}
+      </div>
+      <div
+        className={`mb-2 w-full overflow-hidden rounded-b-md px-4 transition-[height,padding] duration-300   ${
+          isOpen
+            ? "h-32 border-2 border-t-0 border-primary py-4"
+            : "h-0 border border-none py-0"
+        }`}
+      >
+        HIHI
+      </div>
+    </>
+  );
+};
