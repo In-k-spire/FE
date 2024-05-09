@@ -13,6 +13,7 @@
     "@types/axios": "^0.14.0",
     "@types/dom-view-transitions": "^1.0.4",
     "@types/react-icons": "^3.0.0",
+    "@types/react-modal": "^3.16.3",
     "@types/react-toastify": "^4.1.0",
     "@types/recoil": "^0.0.9",
     "@types/swiper": "^6.0.0",
@@ -21,6 +22,7 @@
     "react": "^18",
     "react-dom": "^18",
     "react-lottie-player": "^1.5.5",
+    "react-modal": "^3.16.1",
     "recoil-persist": "^5.1.0",
     "tailwind-scrollbar-hide": "^1.1.7"
   },
