@@ -8,6 +8,8 @@ import { MdOutlineCancel } from "react-icons/md";
 import { FaPlus } from "react-icons/fa6";
 import BtnLayout from "@/components/button";
 import { InputLayout } from "@/components/input";
+import { useModal } from "@/hooks/useModal";
+import AddReport from "@/components/bookDetail/addReport";
 const BookDetail = ({ params }: { params: { slug: string } }) => {
   const { bg } = useRandomBg();
   const router = useRouter();
@@ -39,7 +41,7 @@ const BookDetail = ({ params }: { params: { slug: string } }) => {
           }}
           initial={{ opacity: 0 }}
           animate={{ opacity: 100 }}
-          className="flex h-fit min-h-full w-[90%]    flex-col bg-white  p-8 shadow-2xl lg:w-1/2"
+          className="flex h-fit min-h-full w-[90%]  flex-col bg-white  p-8 shadow-2xl lg:w-1/2"
         >
           <span className="text-4xl font-light">떨림과 울림</span>
           <span className="text-grayscale/40">김상욱 / 동아시아</span>
@@ -58,12 +60,8 @@ const BookDetail = ({ params }: { params: { slug: string } }) => {
               <div></div>
             </div>
           </div>
-          <div className="mb-2 flex justify-between">
-            <InputLayout placeholder="" />
-            <BtnLayout size="sm" color="primary" rounded="rounded-md">
-              독후감 추가 <FaPlus />
-            </BtnLayout>
-          </div>
+          <div className="mb-2 flex justify-between"></div>
+          <AddReport />
           <ReportItem
             title="독후감 1"
             date={new Date()}

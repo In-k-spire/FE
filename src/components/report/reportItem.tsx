@@ -35,13 +35,13 @@ export const ReportItem = ({ title, date, page, desc }: ReportType) => {
         </div>
       </div>
       <div
-        className={`mb-2 w-full overflow-hidden rounded-b-md px-4 transition-[height,padding] duration-300   ${
+        className={`mb-2 w-full overflow-auto rounded-b-md px-4 transition-[height,padding] duration-300   ${
           isOpen
-            ? "h-32 border-2 border-t-0 border-primary py-4"
+            ? "h-48 border-2 border-t-0 border-primary py-4"
             : "h-0 border border-none py-0"
         }`}
       >
-        HIHI
+        {desc}
       </div>
     </>
   );
