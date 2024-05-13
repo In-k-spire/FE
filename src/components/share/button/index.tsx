@@ -12,6 +12,7 @@ export const BtnLayout = ({
   ...props
 }: BtnProps) => {
   const SIZE = {
+    full: "w-full px-8 text-base lg:text-lg",
     sm: "px-4  text-sm lg:text-base",
     md: "px-8 text-base lg:text-lg",
     lg: "px-12 text-lg lg:text-xl",
