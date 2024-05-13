@@ -1,7 +1,7 @@
 import { BookType } from "@/type/book";
-import BookLayout from "../book/bookLayout";
-import { Rating } from "../share/rating";
-import BtnLayout from "../button";
+import BookLayout from "../../share/book";
+import { Rating } from "../../share/rating";
+import BtnLayout from "../../share/button";
 import Link from "next/link";
 import { FaArrowRight } from "react-icons/fa";
 
@@ -15,17 +15,16 @@ export const SelectedBook = ({ book }: { book: BookType }) => {
           size="xl"
         />
         <div className="absolute left-0 top-0 z-10 flex h-full w-full items-center justify-center rounded-lg p-4 opacity-0 duration-300 group-hover/book:bg-[rgba(255,255,255,0.7)] group-hover/book:opacity-100 ">
-          <Link href={``}>
-            <BtnLayout
-              size="md"
-              color="primary"
-              rounded="rounded-md"
-              className="group"
-            >
-              독후감 보기
-              <FaArrowRight className="duration-300 group-hover:translate-x-2" />
-            </BtnLayout>
-          </Link>
+          <BtnLayout
+            href={`/report/과학/1`}
+            size="md"
+            color="primary"
+            rounded="rounded-md"
+            className="group"
+          >
+            독후감 보기
+            <FaArrowRight className="duration-300 group-hover:translate-x-2" />
+          </BtnLayout>
         </div>
       </div>
     </div>

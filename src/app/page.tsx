@@ -1,14 +1,15 @@
 "use client";
-import OAuthBtn from "@/components/button/oauth";
-import { FaGithub } from "react-icons/fa";
-import { FcGoogle } from "react-icons/fc";
-import BtnLayout from "@/components/button";
+
+import BtnLayout from "@/components/share/button";
 import Lottie from "react-lottie-player";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay } from "swiper/modules";
 import ReadingJson from "../assets/reading.json";
 import { quotes } from "@/store/quote";
+import useUser from "@/hooks/useUser";
 export default function Home() {
+  const user = useUser();
+
   return (
     <div className="flex h-full w-full flex-col  items-center  justify-between px-0 md:flex-row ">
       <div className="flex w-full flex-col justify-between gap-6 md:gap-8 xl:gap-12">
@@ -39,21 +40,25 @@ export default function Home() {
         </Swiper>
 
         <div className="flex gap-4">
-          {/* <OAuthBtn provider="github">
+          {!!user ? (
+            <BtnLayout
+              href="/report"
+              size="xl"
+              color="primary"
+              rounded="rounded-md"
+              filled="ghost"
+            >
+              Start Now
+            </BtnLayout>
+          ) : (
+            /* <OAuthBtn provider="github">
             <FaGithub className="h-6 w-6 text-white xl:h-8 xl:w-8" />
           </OAuthBtn>
           <OAuthBtn provider="google">
             <FcGoogle className="h-6 w-6 xl:h-8 xl:w-8" />
-          </OAuthBtn> */}
+          </OAuthBtn> */ <></>
+          )}
         </div>
-        <BtnLayout
-          size="xl"
-          color="primary"
-          rounded="rounded-md"
-          filled="ghost"
-        >
-          Start Now
-        </BtnLayout>
       </div>
       <Lottie
         className="hidden max-w-[30rem] md:flex"

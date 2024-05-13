@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import BtnLayout from "../button";
+import BtnLayout from "../../../share/button";
 
 export const AddReport = () => {
   const [isOpen, setIsOpen] = useState(false);

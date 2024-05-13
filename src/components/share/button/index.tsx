@@ -1,4 +1,5 @@
 import BtnProps from "@/type/button";
+import Link from "next/link";
 
 export const BtnLayout = ({
   children,
@@ -7,6 +8,7 @@ export const BtnLayout = ({
   filled = "filled",
   color,
   className,
+  href = "",
   ...props
 }: BtnProps) => {
   const SIZE = {
@@ -21,16 +23,18 @@ export const BtnLayout = ({
   };
 
   return (
-    <button
-      className={`flex ${
-        props.disabled ? "pointer-events-none opacity-50" : "opacity-100"
-      } items-center ${rounded} max-w-full justify-center gap-2 whitespace-nowrap  py-2 shadow-lg duration-300 ${
-        COLOR[filled]
-      } ${SIZE[size]} h-fit w-fit ${className}`}
-      {...props}
-    >
-      {children}
-    </button>
+    <Link href={href}>
+      <button
+        className={`flex ${
+          props.disabled ? "pointer-events-none opacity-50" : "opacity-100"
+        } items-center ${rounded} max-w-full justify-center gap-2 whitespace-nowrap  py-2 shadow-lg duration-300 ${
+          COLOR[filled]
+        } ${SIZE[size]} h-fit w-fit ${className}`}
+        {...props}
+      >
+        {children}
+      </button>
+    </Link>
   );
 };
 

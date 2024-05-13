@@ -1,6 +1,6 @@
 "use client";
-import BookList from "@/components/bookcategory/bookList";
-import { SelectedBook } from "@/components/bookcategory/selectedBook";
+import BookList from "@/components/report/category/bookList";
+import { SelectedBook } from "@/components/report/category/selectedBook";
 import { useNaverBooks } from "@/service/naver/queries";
 import { useState } from "react";
 

@@ -1,5 +1,5 @@
-import { CateList } from "@/components/category/cateList";
-import { RecentItem } from "@/components/category/recentItem";
+import { CateList } from "@/components/report/cateList";
+import { RecentItem } from "@/components/report/recentItem";
 export default function Report() {
   return (
     <div className="flex w-full  items-center justify-center">

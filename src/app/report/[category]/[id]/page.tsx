@@ -1,15 +1,11 @@
 "use client";
-import BookLayout from "@/components/book/bookLayout";
+import BookLayout from "@/components/share/book";
 import { ReportItem } from "@/components/report/reportItem";
 import { useRandomBg } from "@/hooks/useRandomBg";
 import { motion } from "framer-motion";
 import { useRouter } from "next/navigation";
 import { MdOutlineCancel } from "react-icons/md";
-import { FaPlus } from "react-icons/fa6";
-import BtnLayout from "@/components/button";
-import { InputLayout } from "@/components/input";
-import { useModal } from "@/hooks/useModal";
-import AddReport from "@/components/bookDetail/addReport";
+import AddReport from "@/components/report/category/detail/addReport";
 const BookDetail = ({ params }: { params: { slug: string } }) => {
   const { bg } = useRandomBg();
   const router = useRouter();
