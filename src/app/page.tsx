@@ -43,7 +43,7 @@ export default function Home() {
           {!!user ? (
             <BtnLayout
               href="/report"
-              size="xl"
+              sizes="xl"
               color="primary"
               rounded="rounded-md"
               filled="ghost"

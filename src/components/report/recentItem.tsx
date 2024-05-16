@@ -15,14 +15,14 @@ export const RecentItem = () => {
           <InputLayout
             className="w-full"
             placeholder="카테고리로 검색"
-            size="lg"
+            sizes="lg"
           />
         </div>
         <div className="hidden items-center gap-16  sm:flex xl:gap-24">
           <BookLayout
             image="https://shopping-phinf.pstatic.net/main_3248059/32480599469.20230927071226.jpg"
             className="hidden 2xl:flex"
-            size="xl"
+            sizes="xl"
           />
           <BookLayout image="https://shopping-phinf.pstatic.net/main_3248059/32480599469.20230927071226.jpg" />
           <BookLayout image="https://shopping-phinf.pstatic.net/main_3248059/32480599469.20230927071226.jpg" />

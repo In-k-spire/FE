@@ -48,7 +48,7 @@ export const AddReport = () => {
         <div className="flex justify-end">
           <BtnLayout
             color="primary"
-            size="sm"
+            sizes="sm"
             filled="ghost"
             rounded="rounded-md"
             disabled={!!!content}

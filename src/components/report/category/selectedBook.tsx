@@ -12,12 +12,12 @@ export const SelectedBook = ({ book }: { book: BookType }) => {
         <BookLayout
           image={book?.image}
           className="backface-invisible z-10 "
-          size="xl"
+          sizes="xl"
         />
         <div className="absolute left-0 top-0 z-10 flex h-full w-full items-center justify-center rounded-lg p-4 opacity-0 duration-300 group-hover/book:bg-[rgba(255,255,255,0.7)] group-hover/book:opacity-100 ">
           <BtnLayout
             href={`/report/과학/1`}
-            size="md"
+            sizes="md"
             color="primary"
             rounded="rounded-md"
             className="group"

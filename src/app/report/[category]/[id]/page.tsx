@@ -44,7 +44,7 @@ const BookDetail = ({ params }: { params: { slug: string } }) => {
           <div className="my-8 flex flex-col gap-4 md:flex-row">
             <BookLayout
               image="https://shopping-phinf.pstatic.net/main_3248059/32480599469.20230927071226.jpg"
-              size="lg"
+              sizes="lg"
             />
             <div className="flex-1">
               <span>

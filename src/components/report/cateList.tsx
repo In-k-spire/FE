@@ -11,7 +11,7 @@ export const CateList = ({ category }: { category: string }) => {
           <span>{category}</span>
           <BtnLayout
             href={`/report/${category}`}
-            size="sm"
+            sizes="sm"
             color="shelfTextColor"
             rounded="rounded-full"
             className="group"
@@ -21,8 +21,9 @@ export const CateList = ({ category }: { category: string }) => {
           </BtnLayout>
         </div>
         <BtnLayout
+          href="/report/add"
           color="shelfTextColor"
-          size="sm"
+          sizes="sm"
           filled="ghost"
           rounded="rounded-md"
         >

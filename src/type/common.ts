@@ -1,4 +1,6 @@
 export interface CommonProps {
-  size?: "sm" | "md" | "lg" | "xl" | "full";
+  shadow?: string;
+  rounded?: string;
+  sizes?: "sm" | "md" | "lg" | "xl" | "full";
   className?: string;
 }
