@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export const BtnLayout = ({
   children,
-  size = "md",
+  sizes = "md",
   rounded = "rounded-none",
   filled = "filled",
   color,
@@ -11,7 +11,7 @@ export const BtnLayout = ({
   href = "",
   ...props
 }: BtnProps) => {
-  const SIZE = {
+  const SIZES = {
     full: "w-full px-8 text-base lg:text-lg",
     sm: "px-4  text-sm lg:text-base",
     md: "px-8 text-base lg:text-lg",
@@ -30,7 +30,7 @@ export const BtnLayout = ({
           props.disabled ? "pointer-events-none opacity-50" : "opacity-100"
         } items-center ${rounded} max-w-full justify-center gap-2 whitespace-nowrap  py-2 shadow-lg duration-300 ${
           COLOR[filled]
-        } ${SIZE[size]} h-fit w-fit ${className}`}
+        } ${SIZES[sizes]} h-fit w-fit ${className}`}
         {...props}
       >
         {children}
