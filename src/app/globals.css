@@ -25,13 +25,12 @@ html * {
   transform-style: preserve-3d;
 }
 .multiline-omit {
-  overflow: hidden;
-  white-space: normal;
-  text-overflow: ellipsis;
   display: -webkit-box;
-
+  word-wrap: break-word;
+  -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
-  word-break: keep-all;
+  text-overflow: ellipsis;
+  overflow: hidden;
 }
 .custom-shadow {
   box-shadow: 20px 45px 35px rgba(0, 0, 0, 0.5);
