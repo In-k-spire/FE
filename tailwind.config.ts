@@ -1,4 +1,3 @@
-
 import type { Config } from "tailwindcss";
 export const colors = [
   "bg-[#F75C4F]",
@@ -26,8 +25,8 @@ const config: Config = {
   safelist: [
     { pattern: /border-/ },
     { pattern: /bg-/, variants: ["hover"] },
-    { pattern : /h-/ },
-    ...colors.map(color => color)
+    { pattern: /h-/ },
+    ...colors.map((color) => color),
   ],
   theme: {
     extend: {
@@ -44,6 +43,7 @@ const config: Config = {
         description: "#666666",
       },
       screens: {
+        ow: "0px",
         xs: "480px",
         "2xl": "1600px",
       },
