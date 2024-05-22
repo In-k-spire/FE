@@ -7,6 +7,7 @@ export const BtnLayout = ({
   rounded = "rounded-none",
   filled = "filled",
   color,
+  shadow,
   className,
   href = "",
   ...props
@@ -26,11 +27,11 @@ export const BtnLayout = ({
   return (
     <Link href={href}>
       <button
-        className={`flex ${
+        className={`${className} ${shadow} ${
           props.disabled ? "pointer-events-none opacity-50" : "opacity-100"
-        } items-center ${rounded} max-w-full justify-center gap-2 whitespace-nowrap  py-2 shadow-lg duration-300 ${
+        } items-center ${rounded} flex max-w-full  justify-center gap-2 whitespace-nowrap  py-2 shadow-lg duration-300 ${
           COLOR[filled]
-        } ${SIZES[sizes]} h-fit w-fit ${className}`}
+        } ${SIZES[sizes]} h-fit w-fit `}
         {...props}
       >
         {children}
