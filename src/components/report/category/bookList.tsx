@@ -1,6 +1,6 @@
 import { Swiper, SwiperRef, SwiperSlide } from "swiper/react";
 import { BookType } from "@/type/book";
-import FormatedTitle from "@/utils/separateTitle";
+import FormatedTitle from "@/utils/formatTitle";
 import { useRef } from "react";
 import { useSwipeOnScroll } from "@/hooks/useSwipeOnScroll";
 import Link from "next/link";
