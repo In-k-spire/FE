@@ -16,7 +16,7 @@ export const CateItem = () => {
           총 15권
         </span>
         <BtnLayout
-          size="sm"
+          sizes="sm"
           rounded="rounded-full"
           color="shelfTextColor"
           filled="ghost"
