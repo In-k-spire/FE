@@ -30,6 +30,7 @@ export const SearchInput = ({
   return (
     <div className="relative">
       <InputLayout
+        placeholder="책 제목을 입력하세요"
         onBlur={() => setIsOpen(false)}
         onFocus={() => setIsOpen(true)}
         sizes="full"
