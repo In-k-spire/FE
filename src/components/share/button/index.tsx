@@ -20,18 +20,21 @@ export const BtnLayout = ({
     xl: "px-16 text-xl lg:text-2xl",
   };
   const COLOR = {
-    filled: `text-white bg-${color} `,
+    filled: `text-white bg-${color} hover:opacity-80 border-${color} border `,
     ghost: `text-${color} border bg-transparent border-${color} hover:bg-${color} hover:text-white`,
   };
 
   return (
-    <Link href={href}>
+    <Link
+      href={href}
+      className={`${className} ${shadow}  ${
+        props.disabled ? "pointer-events-none opacity-50" : "opacity-100"
+      } ${rounded} flex max-w-full justify-center  py-2 shadow-lg duration-300 ${
+        COLOR[filled]
+      } ${SIZES[sizes]} h-fit w-fit `}
+    >
       <button
-        className={`${className} ${shadow} ${
-          props.disabled ? "pointer-events-none opacity-50" : "opacity-100"
-        } items-center ${rounded} flex max-w-full  justify-center gap-2 whitespace-nowrap  py-2 shadow-lg duration-300 ${
-          COLOR[filled]
-        } ${SIZES[sizes]} h-fit w-fit `}
+        className="flex items-center justify-center   gap-2 whitespace-nowrap "
         {...props}
       >
         {children}
