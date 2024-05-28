@@ -17,14 +17,22 @@ const DropDownMain = ({
   };
 
   return (
-    <div className={`${className} ${SIZES[sizes]}`}>
+    <div className={`${className} ${SIZES[sizes]} cursor-pointer`}>
       <div
-        className="px-6 py-1 text-center"
+        className={`rounded-md border border-grayscale/20 bg-white px-6 py-2 text-center text-primary shadow-md ${
+          isOpen ? " rounded-b-md" : "rounded-b-none"
+        }`}
         onClick={() => setIsOpen((prev) => !prev)}
       >
         {title}
       </div>
-      <div className={`w-full ${isOpen ? "hidden" : "block"}`}>{children}</div>
+      <div
+        className={`max-h-40 w-full overflow-auto ${
+          isOpen ? "hidden" : "block"
+        }`}
+      >
+        {children}
+      </div>
     </div>
   );
 };
