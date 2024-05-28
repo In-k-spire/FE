@@ -41,6 +41,7 @@ const config: Config = {
         shelfTextColor: "#06717B",
         "background/white": "#f5f6fb",
         description: "#666666",
+        danger: "#eb1616",
       },
       screens: {
         ow: "0px",
