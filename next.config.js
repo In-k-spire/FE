@@ -9,7 +9,6 @@ const nextConfig = {
         source: "/naver/:path*",
         destination: `https://openapi.naver.com/v1/search/book.json/:path*`,
       },
-
     ];
   },
 };
