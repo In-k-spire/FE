@@ -19,7 +19,7 @@ const DropDownMain = ({
   return (
     <div className={`${className} ${SIZES[sizes]} cursor-pointer`}>
       <div
-        className={`rounded-md border border-grayscale/20 bg-white px-6 py-2 text-center text-primary shadow-md ${
+        className={`rounded-md border border-gray-200 bg-white px-6 py-2 text-center text-primary shadow-md ${
           isOpen ? " rounded-b-md" : "rounded-b-none"
         }`}
         onClick={() => setIsOpen((prev) => !prev)}

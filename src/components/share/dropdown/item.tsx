@@ -16,7 +16,7 @@ export const DropDownItem = ({
       className={`${
         selected
           ? " border-white bg-primary text-white"
-          : "border-grayscale/20 bg-white text-black"
+          : "border-gray-200 bg-white text-black"
       } w-full border px-6 py-1 text-center duration-200`}
       onClick={onClick}
     >

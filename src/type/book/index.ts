@@ -12,6 +12,7 @@ export interface BookType {
   description: string;
 }
 
-export interface BookProps extends CommonProps {
-  image : string;
+export interface BookProps extends Omit<CommonProps, "sizes"> {
+  image: string;
+  sizes?: "xs" | "sm" | "md" | "lg" | "xl";
 }

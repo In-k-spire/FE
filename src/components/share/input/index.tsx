@@ -3,8 +3,7 @@ import { InputProps } from "@/type/input";
 export const InputLayout = ({
   sizes = "md",
   placeholder,
-  shadow = "shadow-md",
-  rounded,
+
   className,
   ...props
 }: InputProps) => {
@@ -20,7 +19,7 @@ export const InputLayout = ({
     <input
       {...props}
       placeholder={placeholder}
-      className={`p-4 ${rounded} ${shadow} outline-none ${SIZES[sizes]} ${className}`}
+      className={`p-4 outline-none ${SIZES[sizes]} ${className}`}
     />
   );
 };

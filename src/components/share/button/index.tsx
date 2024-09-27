@@ -4,10 +4,6 @@ import Link from "next/link";
 export const BtnLayout = ({
   children,
   sizes = "md",
-  rounded = "rounded-none",
-  filled = "filled",
-  color,
-  shadow,
   className,
   href = "",
   ...props
@@ -19,22 +15,19 @@ export const BtnLayout = ({
     lg: "px-12 text-lg lg:text-xl",
     xl: "px-16 text-xl lg:text-2xl",
   };
-  const COLOR = {
-    filled: `text-white bg-${color} hover:opacity-80 border-${color} border `,
-    ghost: `text-${color} border bg-transparent border-${color} hover:bg-${color} hover:text-white`,
-  };
 
   return (
     <Link
       href={href}
-      className={`${className} ${shadow}  ${
+      className={`${className} ${
         props.disabled ? "pointer-events-none opacity-50" : "opacity-100"
-      } ${rounded} flex max-w-full justify-center  py-2 shadow-lg duration-300 ${
-        COLOR[filled]
-      } ${SIZES[sizes]} h-fit w-fit `}
+      }
+      ${SIZES[sizes]}
+      py-2 duration-200
+      `}
     >
       <button
-        className="flex items-center justify-center   gap-2 whitespace-nowrap "
+        className="flex items-center justify-center  gap-2 whitespace-nowrap "
         {...props}
       >
         {children}
