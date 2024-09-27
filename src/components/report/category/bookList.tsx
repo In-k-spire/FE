@@ -20,7 +20,7 @@ const BookList = ({
         {({ isActive }) => (
           <Link
             href=""
-            className={`h-fit w-fit cursor-pointer text-2xl font-thin  text-grayscale/40 duration-300 md:text-3xl lg:text-4xl ${
+            className={`h-fit w-fit cursor-pointer text-2xl font-thin  text-gray-400 duration-300 md:text-3xl lg:text-4xl ${
               isActive ? "text-primary" : null
             }`}
           >

@@ -30,7 +30,7 @@ export default function Home() {
         >
           {quotes.map(({ content, person }, idx) => (
             <SwiperSlide
-              className="relative break-keep text-grayscale/40 md:text-lg lg:text-xl xl:text-2xl"
+              className="relative break-keep text-gray-400 md:text-lg lg:text-xl xl:text-2xl"
               key={idx}
             >
               <p>{content}</p>
@@ -41,13 +41,7 @@ export default function Home() {
 
         <div className="flex gap-4">
           {!!user ? (
-            <BtnLayout
-              href="/report"
-              sizes="xl"
-              color="primary"
-              rounded="rounded-md"
-              filled="ghost"
-            >
+            <BtnLayout href="/report" sizes="xl">
               Start Now
             </BtnLayout>
           ) : (

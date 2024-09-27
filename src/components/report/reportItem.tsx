@@ -11,12 +11,12 @@ export const ReportItem = ({ title, date, page, desc }: ReportType) => {
         className={`group ${
           isOpen
             ? "rounded-b-none border-2 border-primary"
-            : "border border-grayscale/30"
+            : "border border-gray-300"
         } relative flex h-16 w-full cursor-pointer items-center justify-between rounded-md  px-4`}
         onClick={() => setIsOpen((prev) => !prev)}
       >
         <FaAngleDown
-          className={`absolute bottom-2 left-1/2 -translate-x-1/2 text-sm text-grayscale/30 duration-300 group-hover:text-black ${
+          className={`absolute bottom-2 left-1/2 -translate-x-1/2 text-sm text-gray-300 duration-300 group-hover:text-black ${
             isOpen ? "rotate-180 text-black" : "rotate-0 "
           }`}
         />
@@ -27,7 +27,7 @@ export const ReportItem = ({ title, date, page, desc }: ReportType) => {
             {page}p ~ {page}p
           </div>
           <div
-            className="flex h-8 w-8 cursor-pointer  items-center justify-center rounded-full duration-300 hover:bg-grayscale/20"
+            className="flex h-8 w-8 cursor-pointer  items-center justify-center rounded-full duration-300 hover:bg-gray-200"
             onClick={(e) => e.stopPropagation()}
           >
             <BsThreeDotsVertical />
