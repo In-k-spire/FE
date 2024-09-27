@@ -12,9 +12,7 @@ export const CateList = ({ category }: { category: string }) => {
           <BtnLayout
             href={`/report/${category}`}
             sizes="sm"
-            color="shelfTextColor"
-            rounded="rounded-full"
-            className="group"
+            className="group rounded-full bg-shelfTextColor text-white"
           >
             더보기
             <FaArrowRight className="duration-300 group-hover:translate-x-2" />
@@ -24,8 +22,7 @@ export const CateList = ({ category }: { category: string }) => {
           href="/report/add"
           color="shelfTextColor"
           sizes="sm"
-          filled="ghost"
-          rounded="rounded-md"
+          className="rounded-md border border-shelfTextColor text-shelfTextColor hover:bg-shelfTextColor hover:text-white"
         >
           책 추가하기
           <FaPlus />
