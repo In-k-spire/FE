@@ -6,7 +6,7 @@ import { useState } from "react";
 
 const CategoryDetail = () => {
   const [selectedBookId, setSelectedBookId] = useState(0);
-  const { data: books, isLoading } = useNaverBooks("과학", 50);
+  const { books, isLoading } = useNaverBooks("과학", 50);
   const handleBookChange = (bookIdx: number) => {
     document.startViewTransition(() => {
       setSelectedBookId(bookIdx);
