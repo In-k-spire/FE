@@ -1,8 +1,6 @@
 import { BookType } from "@/type/book";
 import BookLayout from "../../share/book";
-import { Rating } from "../../share/rating";
 import BtnLayout from "../../share/button";
-import Link from "next/link";
 import { FaArrowRight } from "react-icons/fa";
 
 export const SelectedBook = ({ book }: { book: BookType }) => {

@@ -1,14 +1,12 @@
 "use client";
-
 import BtnLayout from "@/components/share/button";
-import Lottie from "react-lottie-player";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay } from "swiper/modules";
-import ReadingJson from "../assets/reading.json";
 import { quotes } from "@/store/quote";
 import useUser from "@/hooks/useUser";
+import Image from "next/image";
 export default function Home() {
-  const user = useUser();
+  // const user = useUser();
 
   return (
     <div className="flex h-full w-full flex-col  items-center  justify-between px-0 md:flex-row ">
@@ -40,26 +38,27 @@ export default function Home() {
         </Swiper>
 
         <div className="flex gap-4">
-          {!!user ? (
-            <BtnLayout href="/report" sizes="xl">
-              Start Now
-            </BtnLayout>
-          ) : (
-            /* <OAuthBtn provider="github">
-            <FaGithub className="h-6 w-6 text-white xl:h-8 xl:w-8" />
-          </OAuthBtn>
-          <OAuthBtn provider="google">
-            <FcGoogle className="h-6 w-6 xl:h-8 xl:w-8" />
-          </OAuthBtn> */ <></>
-          )}
+          <BtnLayout
+            href="/report"
+            sizes="xl"
+            className="rounded-md bg-primary text-white duration-200 hover:opacity-80"
+          >
+            Start Now
+          </BtnLayout>
         </div>
       </div>
-      <Lottie
-        className="hidden max-w-[30rem] md:flex"
-        loop
-        play
-        animationData={ReadingJson}
-      />
+      <div className="relative h-full w-full">
+        <Image
+          src="/reading.png"
+          width={0}
+          loading="eager"
+          height={0}
+          fill
+          objectFit="contain"
+          sizes="100%"
+          alt="사진"
+        />
+      </div>
     </div>
   );
 }
