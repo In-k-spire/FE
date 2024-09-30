@@ -1,18 +1,17 @@
 "use client";
-import { BookInfo } from "@/components/report/add/bookInfo";
-import { SearchInput } from "@/components/report/add/searchInput";
-import { defaultBookValue } from "@/store/book";
+import BookInfo from "@/components/report/add/bookInfo";
+import CategoryBox from "@/components/report/add/categoryBox";
+import SearchBox from "@/components/report/add/searchBox";
 import { BookType } from "@/type/book";
-import FormatedTitle from "@/utils/formatTitle";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
-export const AddBook = () => {
-  const [data, setData] = useState<BookType>(defaultBookValue);
-
+const AddBook = () => {
+  const [selectedBook, setSelectedBook] = useState<BookType>();
   return (
-    <div className="flex flex-col gap-8">
-      <SearchInput setData={setData} />
-      {!!data.title.length ? <BookInfo book={data} /> : null}
+    <div className="flex flex-col rounded-md border border-gray-300 bg-white p-6 shadow-sm">
+      <SearchBox setSelectedBook={setSelectedBook} />
+      <BookInfo book={selectedBook} />
+      <CategoryBox list={["테스트1", "테스트2"]} book={selectedBook} />
     </div>
   );
 };
