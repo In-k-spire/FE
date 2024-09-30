@@ -10,14 +10,11 @@ export const DropDownItem = ({
   children,
   onClick,
 }: DropDownItemProps) => {
-  console.log(selected);
   return (
     <div
       className={`${
-        selected
-          ? " border-white bg-primary text-white"
-          : "border-gray-200 bg-white text-black"
-      } w-full border px-6 py-1 text-center duration-200`}
+        selected ? "text-primary" : "text-black"
+      } w-full px-4 py-1 duration-200 hover:bg-gray-100`}
       onClick={onClick}
     >
       {children}

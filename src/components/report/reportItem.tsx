@@ -4,7 +4,6 @@ import { FaAngleDown } from "react-icons/fa6";
 import { BsThreeDotsVertical } from "react-icons/bs";
 export const ReportItem = ({ title, date, page, desc }: ReportType) => {
   const [isOpen, setIsOpen] = useState(false);
-  console.log(isOpen);
   return (
     <>
       <div
