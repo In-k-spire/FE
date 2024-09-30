@@ -7,7 +7,7 @@ const ReviewList = () => {
     else setActiveId(id);
   };
   const ListItem = [0, 1, 2].map((_, id) => (
-    <div className="flex flex-col">
+    <div key={id} className="flex flex-col">
       <div
         onClick={() => handleActiveId(id)}
         className="group flex cursor-pointer items-center justify-between  py-4"
