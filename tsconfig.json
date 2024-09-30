@@ -27,7 +27,8 @@
     "**/*.ts",
     "**/*.tsx",
     ".next/types/**/*.ts",
-    "prettier.config.js"
+    "prettier.config.js",
+    "next-sitemap.config.js"
   ],
   "exclude": ["node_modules"]
 }

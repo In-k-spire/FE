@@ -1,8 +1,10 @@
 import Header from "@/components/header";
 import "./globals.css";
-import { ToastContainer } from "react-toastify"
-import "react-toastify/dist/ReactToastify.css"
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import LibRegistry from "@/lib/registry";
+import CommonMetadata from "@/constant/metadata";
+import { Metadata } from "next";
 
 export default function RootLayout({
   children,
@@ -30,3 +32,8 @@ export default function RootLayout({
     </LibRegistry>
   );
 }
+
+export const metadata: Metadata = {
+  title: "Inkspire",
+  ...CommonMetadata,
+};
