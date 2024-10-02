@@ -5,14 +5,18 @@ export interface BookType {
   link: string;
   image: string;
   author: string;
-  discount: string;
   publisher: string;
-  pubdate: string;
-  isbn: string;
   description: string;
+  id?: number;
 }
 
 export interface BookProps extends Omit<CommonProps, "sizes"> {
   image: string;
   sizes?: "xs" | "sm" | "md" | "lg" | "xl";
+}
+
+export interface BookReviewType {
+  oneLineReview: string;
+  content: string;
+  lastModifiedAt?: string;
 }
