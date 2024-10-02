@@ -5,6 +5,7 @@ import "react-toastify/dist/ReactToastify.css";
 import LibRegistry from "@/lib/registry";
 import CommonMetadata from "@/constant/metadata";
 import { Metadata } from "next";
+import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 
 export default function RootLayout({
   children,
@@ -17,7 +18,7 @@ export default function RootLayout({
         <body className="relative flex flex-col  bg-background/white">
           <Header>
             <Header.Menu link="/">홈</Header.Menu>
-            <Header.Menu link="/report">독후감 작성</Header.Menu>
+            <Header.Menu link="/category">독후감 작성</Header.Menu>
             <Header.Menu link="/stat">통계</Header.Menu>
           </Header>
           <div
@@ -27,6 +28,7 @@ export default function RootLayout({
             {children}
           </div>
           <ToastContainer closeOnClick rtl={false} position="bottom-right" />
+          <ReactQueryDevtools initialIsOpen={false} />
         </body>
       </html>
     </LibRegistry>
