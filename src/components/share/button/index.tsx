@@ -17,22 +17,33 @@ export const BtnLayout = ({
   };
 
   return (
-    <Link
-      href={href}
-      className={`${className} ${
-        props.disabled ? "pointer-events-none opacity-50" : "opacity-100"
-      }
-      ${SIZES[sizes]}
-      py-2 duration-200
-      `}
-    >
-      <button
-        className="flex items-center justify-center  gap-2 whitespace-nowrap "
-        {...props}
-      >
-        {children}
-      </button>
-    </Link>
+    <>
+      {href ? (
+        <Link
+          href={href}
+          className={`${className} ${
+            props.disabled ? "pointer-events-none opacity-50" : "opacity-100"
+          }
+          ${SIZES[sizes]}
+          py-2 duration-200
+          `}
+        >
+          <button
+            className="flex items-center justify-center  gap-2 whitespace-nowrap "
+            {...props}
+          >
+            {children}
+          </button>
+        </Link>
+      ) : (
+        <button
+          className={`${SIZES[sizes]} ${className} flex items-center justify-center gap-2  whitespace-nowrap py-2`}
+          {...props}
+        >
+          {children}
+        </button>
+      )}
+    </>
   );
 };
 
