@@ -5,19 +5,18 @@ import { AxiosError, AxiosResponse } from "axios";
 import { useRouter } from "next/navigation";
 import { Storage } from "@/api/storage/storage";
 import useApiError from "@/hooks/useApiError";
+import { toast } from "react-toastify";
 
 export const useLoginMutation = () => {
-  const router = useRouter();
-  const {handleError} = useApiError();
+  const { handleError } = useApiError();
   const { mutate: loginMutate, ...restMutation } = useMutation({
     mutationFn: login,
-    onSuccess: (res: AxiosResponse) => {
-      const {accessToken, refreshToken} = res.data
-      Storage.setItem('accessToken' , accessToken);
-      Storage.setItem('refreshToken' , refreshToken);
-      router.push("/");
+    onSuccess: (res: any) => {
+      const { accessToken, refreshToken } = res;
+      Storage.setItem("accessToken", accessToken);
+      Storage.setItem("refreshToken", refreshToken);
     },
-    onError: handleError
+    onError: handleError,
   });
   return { loginMutate, ...restMutation };
 };
