@@ -13,7 +13,7 @@ export const SelectedBook = ({ book }: { book: BookType }) => {
           sizes="xl"
         />
         <div className="absolute left-0 top-0 z-10 flex h-full w-full items-center justify-center rounded-lg p-4 opacity-0 duration-300 group-hover/book:bg-[rgba(255,255,255,0.7)] group-hover/book:opacity-100 ">
-          <BtnLayout href={`/report/과학/1`} sizes="md" className="group">
+          <BtnLayout href={`/review/${book.id}`} sizes="md" className="group">
             독후감 보기
             <FaArrowRight className="duration-300 group-hover:translate-x-2" />
           </BtnLayout>
