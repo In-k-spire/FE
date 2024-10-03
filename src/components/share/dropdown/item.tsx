@@ -14,7 +14,7 @@ export const DropDownItem = ({
     <div
       className={`${
         selected ? "text-primary" : "text-black"
-      } w-full px-4 py-1 duration-200 hover:bg-gray-100`}
+      } w-full px-3 py-1 duration-200 hover:bg-gray-100`}
       onClick={onClick}
     >
       {children}
