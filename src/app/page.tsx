@@ -2,12 +2,11 @@
 import BtnLayout from "@/components/share/button";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay } from "swiper/modules";
-import { quotes } from "@/store/quote";
+
 import Image from "next/image";
-import useOauth from "@/hooks/useOAuth";
+import { quotes } from "@/constants/quote";
 
 export default function Home() {
-  const { redirectOAuth } = useOauth();
   return (
     <div className="flex h-full w-full flex-col  items-center  justify-between px-0 md:flex-row ">
       <div className="flex w-full flex-col justify-between gap-6 md:gap-8 xl:gap-12">
@@ -36,10 +35,9 @@ export default function Home() {
             </SwiperSlide>
           ))}
         </Swiper>
-
         <div className="flex gap-4">
           <BtnLayout
-            onClick={() => redirectOAuth("github")}
+            href="/login"
             sizes="xl"
             className="rounded-md bg-primary text-white duration-200 hover:opacity-80"
           >
