@@ -8,7 +8,6 @@ export default function OAuth() {
   const params = useSearchParams();
   const code = params.get("code");
   const provider = params.get("provider");
-  console.log(code, provider);
   useEffect(() => {
     loginMutate({ code, provider });
     if (!isPending) router.replace("/");

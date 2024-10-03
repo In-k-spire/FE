@@ -6,7 +6,6 @@ import { useState } from "react";
 const HeaderMain = ({ children }: { children: React.ReactNode }) => {
   const { user, logout } = useUser();
   const [isOpen, setIsOpen] = useState(false);
-  console.log("user", user);
   return (
     <div className="flex h-16 w-full items-center justify-between bg-white px-12 shadow-md sm:px-8 md:px-16 lg:px-28 xl:px-36 ">
       <div className="flex items-center gap-6 lg:gap-8">{children}</div>

@@ -5,7 +5,6 @@ interface ICateItem {
   book: BookType;
 }
 export const CateItem = ({ book }: ICateItem) => {
-  console.log(book);
   return (
     <div className="flex h-fit gap-8 2xl:gap-12">
       <BookLayout image={book.image} className="cursor-pointer" />

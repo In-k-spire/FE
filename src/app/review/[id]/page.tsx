@@ -7,7 +7,6 @@ import { useBookQuery } from "@/service/book/queries";
 const BookDetail = ({ params }: { params: { id: number } }) => {
   const { id } = params;
   const { book, isLoading } = useBookQuery(id);
-  console.log(book);
   return (
     <div className="flex flex-col gap-8">
       <ReviewInfo book={book} />

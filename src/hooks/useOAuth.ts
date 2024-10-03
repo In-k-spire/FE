@@ -10,7 +10,6 @@ const useOauth = () => {
     const { data } = await server.get(
       `/auth/${provider}/uri?redirectUri=${redirect}/oauth?provider=${provider}`,
     );
-    console.log(data.uri, "uri");
     router.replace(data.uri);
   };
 
