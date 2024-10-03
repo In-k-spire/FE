@@ -2,7 +2,7 @@
 const nextConfig = {
   reactStrictMode: false,
   images: {
-    domains: ["i.ytimg.com", "shopping-phinf.pstatic.net"],
+    domains: ["shopping-phinf.pstatic.net"],
   },
   async rewrites() {
     return [
