@@ -37,7 +37,9 @@ export const BtnLayout = ({
         </Link>
       ) : (
         <button
-          className={`${SIZES[sizes]} ${className} flex items-center justify-center gap-2  whitespace-nowrap py-2`}
+          className={`${SIZES[sizes]} ${className} ${
+            props.disabled ? "pointer-events-none opacity-50" : "opacity-100"
+          } flex items-center justify-center gap-2  whitespace-nowrap py-2`}
           {...props}
         >
           {children}
