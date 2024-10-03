@@ -20,7 +20,9 @@ const CategoryDetail = ({ params }: { params: { id: string } }) => {
       className={`flex h-full w-full flex-col items-center justify-between gap-8 lg:flex-row lg:gap-0`}
     >
       <BookList setSelectedBookId={handleBookChange} books={bookList} />
-      {!isLoading ? <SelectedBook book={bookList[selectedBookId]} /> : null}
+      {!isLoading && bookList ? (
+        <SelectedBook book={bookList[selectedBookId]} />
+      ) : null}
     </div>
   );
 };
