@@ -1,5 +1,6 @@
 import BtnLayout from "@/components/share/button";
 import DropDown from "@/components/share/dropdown";
+import { InputLayout } from "@/components/share/input";
 import useCategory from "@/hooks/useCategory";
 import { useBookMutation } from "@/service/book/mutations";
 import { BookType } from "@/type/book";
@@ -13,7 +14,8 @@ const CategoryBox = ({ book }: ICategoryBox) => {
   const params = useSearchParams();
   const defaultId = params.get("id");
   const defaultCategory = params.get("category");
-  const { category } = useCategory();
+  const { category, categoryMutate } = useCategory();
+  const [newCategory, setNewCategory] = useState("");
   const { bookMutate } = useBookMutation();
   const [categoryItem, setCategoryItem] = useState(
     defaultCategory || "카테고리를 선택해주세요",
@@ -34,11 +36,31 @@ const CategoryBox = ({ book }: ICategoryBox) => {
   ));
   return (
     <div className="mt-6 flex flex-col  gap-16">
-      <DropDown title={categoryItem}>{DropItems}</DropDown>
+      <DropDown title={categoryItem}>
+        <div
+          className="flex justify-between gap-2 p-1"
+          onClick={(e) => e.stopPropagation()}
+        >
+          <InputLayout
+            sizes="full"
+            onChange={(e) => setNewCategory(e.target.value)}
+            className="rounded-md border border-gray-300 ow:p-2"
+          />
+          <BtnLayout
+            disabled={!!!newCategory}
+            sizes="sm"
+            className="rounded-md bg-primary text-white ow:py-2"
+            onClick={() => categoryMutate(newCategory)}
+          >
+            카테고리 추가
+          </BtnLayout>
+        </div>
+        {DropItems}
+      </DropDown>
       <BtnLayout
         disabled={categoryItem == "카테고리를 선택해주세요" || !book}
         sizes="sm"
-        className=" w-fit rounded-md bg-primary text-white "
+        className="w-fit rounded-md bg-primary text-white "
         onClick={() => bookMutate({ categoryId: selectedId, book: book })}
       >
         책 추가하기
