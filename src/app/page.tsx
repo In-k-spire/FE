@@ -5,8 +5,10 @@ import { Autoplay } from "swiper/modules";
 
 import Image from "next/image";
 import { quotes } from "@/constants/quote";
+import useUser from "@/hooks/useUser";
 
 export default function Home() {
+  const { user } = useUser();
   return (
     <div className="flex h-full w-full flex-col  items-center  justify-between px-0 md:flex-row ">
       <div className="flex w-full flex-col justify-between gap-6 md:gap-8 xl:gap-12">
@@ -37,11 +39,11 @@ export default function Home() {
         </Swiper>
         <div className="flex gap-4">
           <BtnLayout
-            href="/login"
+            href={`${!!user ? "/review/add" : "/login"}`}
             sizes="xl"
             className="rounded-md bg-primary text-white duration-200 hover:opacity-80"
           >
-            Start Now
+            {!!user ? "독후감 쓰기" : "Start Now"}
           </BtnLayout>
         </div>
       </div>
