@@ -10,11 +10,20 @@ const BookLayout = ({ image, sizes = "md", className }: BookProps) => {
     lg: "w-56 h-80 lg:w-64 lg:h-[22rem]",
     xl: "w-72 h-[25rem] lg:w-80 lg:h-[28rem]",
   };
+
   return (
     <div
       className={`${SIZES[sizes]} relative shrink-0 overflow-hidden rounded-lg shadow-2xl ${className}`}
     >
-      <Image alt="책" src={image} sizes="100%" fill />
+      <Image
+        alt="책"
+        src={image}
+        loading="eager"
+        sizes="100vw"
+        fill
+        blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAFklEQVR42mN8//HLfwYiAOOoQvoqBABbWyZJf74GZgAAAABJRU5ErkJggg=="
+        placeholder="blur"
+      />
     </div>
   );
 };

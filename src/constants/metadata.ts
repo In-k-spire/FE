@@ -5,7 +5,7 @@ const CommonMetadata: Metadata = {
   openGraph: {
     title: "Inkspire",
     description: "독후감 기록 사이트",
-    url: "https://nextjs.org",
+    url: "https://ink-spire.netlify.app/",
     siteName: "Inkspire",
     locale: "ko_KR",
     type: "website",
