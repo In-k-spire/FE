@@ -39,11 +39,11 @@ export default function Home() {
         </Swiper>
         <div className="flex gap-4">
           <BtnLayout
-            href={`${!!user ? "/category/add" : "/login"}`}
+            href={`${!!user?.name ? "/category/add" : "/login"}`}
             sizes="xl"
             className="rounded-md bg-primary text-white duration-200 hover:opacity-80"
           >
-            {!!user ? "독후감 쓰기" : "Start Now"}
+            {!!user?.name ? "독후감 쓰기" : "Start Now"}
           </BtnLayout>
         </div>
       </div>

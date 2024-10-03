@@ -1,8 +1,10 @@
 import { server } from "@/api/instance/instance";
+import { Storage } from "@/api/storage/storage";
 import authorization from "@/api/token/authorization";
 import { LoginProps } from "@/type/user/user";
 
 export const getUser = async () => {
+  if (!!!Storage.getItem("accessToken")) return { name: "", id: "" };
   const { data } = await server.get("/user", authorization());
   return data;
 };

@@ -10,12 +10,12 @@ const HeaderMain = ({ children }: { children: React.ReactNode }) => {
     <div className="flex h-16 w-full items-center justify-between bg-white px-12 shadow-md sm:px-8 md:px-16 lg:px-28 xl:px-36 ">
       <div className="flex items-center gap-6 lg:gap-8">{children}</div>
       <div className="text-base md:text-lg xl:text-2xl">
-        {!!user ? (
+        {!!user?.name ? (
           <div
             className="relative cursor-pointer"
             onClick={() => setIsOpen((prev) => !prev)}
           >
-            {user.name} 님 안녕하세요
+            {user?.name} 님 안녕하세요
             <div
               onClick={logout}
               className={`${
