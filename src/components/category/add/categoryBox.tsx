@@ -42,6 +42,7 @@ const CategoryBox = ({ book }: ICategoryBox) => {
           onClick={(e) => e.stopPropagation()}
         >
           <InputLayout
+            placeholder="카테고리를 입력해주세요"
             sizes="full"
             onChange={(e) => setNewCategory(e.target.value)}
             className="rounded-md border border-gray-300 ow:p-2"
