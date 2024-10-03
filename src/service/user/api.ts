@@ -1,8 +1,10 @@
 import { server } from "@/api/instance/instance";
+import authorization from "@/api/token/authorization";
 import { LoginProps } from "@/type/user/user";
 
 export const getUser = async () => {
-  const { data } = await server.get("/");
+  const { data } = await server.get("/user", authorization());
+  return data;
 };
 
 export const login = async (props: LoginProps) => {
