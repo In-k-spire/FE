@@ -1,13 +1,14 @@
 {
   "name": "book-report",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "postbuild": "next-sitemap"
+    "postbuild": "next-sitemap",
+    "production": "npm run build && npm run start"
   },
   "dependencies": {
     "@tanstack/react-query": "^5.26.3",
@@ -20,16 +21,13 @@
     "@types/react-toastify": "^4.1.0",
     "@types/recoil": "^0.0.9",
     "@types/swiper": "^6.0.0",
-    "framer-motion": "^11.0.5",
     "lodash": "^4.17.21",
     "next": "14.0.4",
     "next-sitemap": "^4.2.3",
     "react": "^18",
     "react-dom": "^18",
-    "react-lottie-player": "^1.5.5",
     "react-modal": "^3.16.1",
-    "recoil-persist": "^5.1.0",
-    "tailwind-scrollbar-hide": "^1.1.7"
+    "recoil-persist": "^5.1.0"
   },
   "devDependencies": {
     "@types/node": "^20",
