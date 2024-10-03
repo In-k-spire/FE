@@ -1,12 +1,14 @@
-import { useQuery } from "@tanstack/react-query"
-import { getUser } from "./api"
-import { OAuthType } from "@/type/oauth"
+import { useQuery } from "@tanstack/react-query";
+import { getUser } from "./api";
+import { Storage } from "@/api/storage/storage";
+import { useTokenValueStore } from "@/store/token";
 
 export const useUserQuery = () => {
-    const {data , ...restQuery} = useQuery({
-        queryKey : ['user'],
-        queryFn : getUser,
-        retry : 1
-    })
-    return {data, ...restQuery}
-}
+  const token = useTokenValueStore();
+  const { data, ...restQuery } = useQuery({
+    queryKey: ["user", token],
+    queryFn: getUser,
+    enabled: !!token.accessToken,
+  });
+  return { data, ...restQuery };
+};

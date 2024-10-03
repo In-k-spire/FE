@@ -1,8 +1,9 @@
 export interface UserType {
-    code : string
+  name: string;
+  id: string;
 }
 
 export interface LoginProps {
-    code : string | null;
-    provider : string | null;
+  code: string | null;
+  provider: string | null;
 }
