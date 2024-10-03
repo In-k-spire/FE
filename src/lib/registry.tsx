@@ -1,10 +1,23 @@
 "use client";
-import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import useApiError from "@/hooks/useApiError";
+import {
+  QueryCache,
+  QueryClient,
+  QueryClientProvider,
+} from "@tanstack/react-query";
+import axios from "axios";
 
 import { ReactNode } from "react";
 import { RecoilRoot } from "recoil";
 const LibRegistry = ({ children }: { children: ReactNode }) => {
-  const queryClient = new QueryClient();
+  const { handleError } = useApiError();
+  const queryClient = new QueryClient({
+    queryCache: new QueryCache({
+      onError: (error) => {
+        if (axios.isAxiosError(error)) handleError(error);
+      },
+    }),
+  });
   return (
     <RecoilRoot>
       <QueryClientProvider client={queryClient}>{children}</QueryClientProvider>
