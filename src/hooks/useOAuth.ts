@@ -11,7 +11,7 @@ const useOauth = () => {
       `/auth/${provider}/uri?redirectUri=${redirect}/oauth?provider=${provider}`,
     );
     console.log(data.uri, "uri");
-    router.push(data.uri);
+    router.replace(data.uri);
   };
 
   return { redirectOAuth };
