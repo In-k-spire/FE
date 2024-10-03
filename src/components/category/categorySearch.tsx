@@ -8,7 +8,7 @@ interface ICategorySearch {
 export const CategorySearch = ({ setCategory }: ICategorySearch) => {
   return (
     <div className="w-full">
-      <div className="flex  items-start justify-between gap-8 p-12 ">
+      <div className="flex flex-col-reverse items-start justify-between gap-8 p-4 md:flex-row md:p-8 lg:p-12 ">
         <div className="flex w-full flex-col sm:w-auto">
           <span className="hidden whitespace-nowrap text-4.5xl font-bold leading-[1.1] text-shelfTextColor sm:flex md:text-5xl lg:text-5.5xl 2xl:text-6xl">
             Book of<br></br> the week

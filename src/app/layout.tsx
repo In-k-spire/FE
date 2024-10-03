@@ -3,7 +3,7 @@ import "./globals.css";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import LibRegistry from "@/lib/registry";
-import CommonMetadata from "@/constant/metadata";
+import CommonMetadata from "@/constants/metadata";
 import { Metadata } from "next";
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 
@@ -23,7 +23,7 @@ export default function RootLayout({
           </Header>
           <div
             id="layout"
-            className="w-full flex-1 overflow-auto p-12 md:px-20 lg:px-28 xl:px-36 "
+            className="w-full flex-1 overflow-auto px-4 py-6 sm:px-8 md:px-16 md:py-12 lg:px-28 xl:px-36 "
           >
             {children}
           </div>

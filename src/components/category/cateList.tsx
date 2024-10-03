@@ -15,10 +15,11 @@ export const CateList = ({ name, id, bookList }: ICateList) => {
   ));
   return (
     <div className="relative flex w-full flex-col">
-      <div className="flex items-center justify-between px-8 pt-8  lg:px-12 ">
-        <div className="flex gap-4 text-2xl xl:text-3xl">
+      <div className="flex flex-col items-start justify-between gap-2 px-4 pt-8 md:flex-row md:items-center md:gap-0 md:px-8  lg:px-12 ">
+        <div className="flex w-full justify-between gap-4 text-2xl md:w-auto md:justify-start xl:text-3xl">
           <span>{name}</span>
           <BtnLayout
+            disabled={!bookList.length}
             href={`/category/${id}`}
             sizes="sm"
             className="group rounded-full bg-shelfTextColor text-white"
@@ -28,7 +29,7 @@ export const CateList = ({ name, id, bookList }: ICateList) => {
           </BtnLayout>
         </div>
         <BtnLayout
-          href={`/report/add?category=${name}&id=${id}`}
+          href={`/category/add?category=${name}&id=${id}`}
           color="shelfTextColor"
           sizes="sm"
           className="rounded-md border border-shelfTextColor text-shelfTextColor hover:bg-shelfTextColor hover:text-white"
@@ -37,7 +38,7 @@ export const CateList = ({ name, id, bookList }: ICateList) => {
           <FaPlus />
         </BtnLayout>
       </div>
-      <div className="flex h-full w-full gap-8 overflow-auto p-8 lg:gap-12 lg:p-12 2xl:gap-16">
+      <div className="flex h-full w-full gap-8 overflow-auto p-4 md:p-8 lg:gap-12 lg:p-12 2xl:gap-16">
         {ItemList}
       </div>
       <Shelf />
