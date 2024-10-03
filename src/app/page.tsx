@@ -39,7 +39,7 @@ export default function Home() {
         </Swiper>
         <div className="flex gap-4">
           <BtnLayout
-            href={`${!!user ? "/review/add" : "/login"}`}
+            href={`${!!user ? "/category/add" : "/login"}`}
             sizes="xl"
             className="rounded-md bg-primary text-white duration-200 hover:opacity-80"
           >
@@ -49,12 +49,12 @@ export default function Home() {
       </div>
       <div className="relative h-full w-full">
         <Image
+          className="object-contain"
+          priority={true}
           src="/reading.png"
           width={0}
-          loading="eager"
           height={0}
           fill
-          objectFit="contain"
           sizes="100%"
           alt="사진"
         />
