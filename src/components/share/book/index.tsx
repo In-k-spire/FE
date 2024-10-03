@@ -19,7 +19,7 @@ const BookLayout = ({ image, sizes = "md", className }: BookProps) => {
         alt="책"
         src={image}
         loading="eager"
-        sizes="100vw"
+        sizes="100%"
         fill
         blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAFklEQVR42mN8//HLfwYiAOOoQvoqBABbWyZJf74GZgAAAABJRU5ErkJggg=="
         placeholder="blur"
