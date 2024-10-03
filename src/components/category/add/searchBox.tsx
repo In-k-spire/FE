@@ -29,9 +29,13 @@ const SearchBox = ({
             sizes="xs"
             className="ow:rounded-none"
           />
-          <div className="flex flex-col gap-1 ">
-            <span className="text font-semibold">{book.title}</span>
-            <span className="text-sm text-gray-400">{book.author}</span>
+          <div className="flex flex-col gap-1 overflow-hidden">
+            <span className="text text-overflow-2 font-semibold">
+              {book.title}
+            </span>
+            <span className="truncate text-sm text-gray-400">
+              {book.author}
+            </span>
           </div>
         </div>
       )),
