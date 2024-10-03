@@ -10,7 +10,7 @@ export const CateItem = ({ book }: ICateItem) => {
     <div className="flex h-fit gap-8 2xl:gap-12">
       <BookLayout image={book.image} className="cursor-pointer" />
       <div className="flex flex-col justify-between gap-4">
-        <span className="text-overflow font-bold text-shelfTextColor md:text-lg xl:text-xl">
+        <span className="text-overflow-4 font-bold text-shelfTextColor md:text-lg xl:text-xl">
           {book.title}
         </span>
 
