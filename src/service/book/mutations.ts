@@ -3,8 +3,10 @@ import { setBook, setReview } from "./api";
 import { BookReviewType, BookType } from "@/type/book";
 import useApiError from "@/hooks/useApiError";
 import { toast } from "react-toastify";
+import { useRouter } from "next/navigation";
 
 export const useBookMutation = () => {
+  const router = useRouter();
   const { handleError } = useApiError();
   const queryClient = useQueryClient();
   const { mutate, ...restMutate } = useMutation({
@@ -18,6 +20,7 @@ export const useBookMutation = () => {
     onError: handleError,
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ["category"] });
+      router.push("/category");
       toast.success("책 추가 성공!");
     },
   });
