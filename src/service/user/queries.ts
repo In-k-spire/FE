@@ -9,6 +9,7 @@ export const useUserQuery = () => {
     queryKey: ["user", token],
     queryFn: getUser,
     enabled: !!token.accessToken,
+    retry: 0,
   });
   return { data, ...restQuery };
 };
