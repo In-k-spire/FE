@@ -15,7 +15,7 @@ export const CateList = ({ name, id, bookList }: ICateList) => {
   ));
   return (
     <div className="relative flex w-full flex-col">
-      <div className="flex flex-col items-start justify-between gap-2 px-4 pt-8 md:flex-row md:items-center md:gap-0 md:px-8  lg:px-12 ">
+      <div className="flex flex-col items-start justify-between gap-2 px-4 pt-8 md:flex-row md:items-center md:gap-0 md:px-8 lg:px-12 ">
         <div className="flex w-full justify-between gap-4 text-2xl md:w-auto md:justify-start xl:text-3xl">
           <span>{name}</span>
           <BtnLayout
