@@ -35,7 +35,7 @@ const DropDownMain = ({
       <div
         className={`${
           isOpen ? "flex" : "hidden"
-        } absolute left-0 top-[120%]  w-full  flex-col rounded-md border border-gray-300 bg-white p-1 shadow-sm`}
+        } absolute left-0 top-[120%] z-10  w-full  flex-col rounded-md border border-gray-300 bg-white p-1 shadow-sm`}
       >
         {children}
       </div>
