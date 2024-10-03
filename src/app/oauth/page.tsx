@@ -11,7 +11,7 @@ export default function OAuth() {
   console.log(code, provider);
   useEffect(() => {
     loginMutate({ code, provider });
-    if (!isPending) router.push("/");
+    if (!isPending) router.replace("/");
   }, []);
 
   return (

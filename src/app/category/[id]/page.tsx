@@ -2,13 +2,10 @@
 import BookList from "@/components/category/category/bookList";
 import { SelectedBook } from "@/components/category/category/selectedBook";
 import { useCategoryById } from "@/service/category/queries";
-import { useSearchParams } from "next/navigation";
 import { useState } from "react";
 
 const CategoryDetail = ({ params }: { params: { id: string } }) => {
   const [selectedBookId, setSelectedBookId] = useState(0);
-  const searchParam = useSearchParams();
-  console.log(params);
   const { id } = params;
   const { data, isLoading } = useCategoryById(id);
   const { bookList } = data || [];
