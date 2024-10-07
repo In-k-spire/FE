@@ -23,7 +23,7 @@ export default function RootLayout({
           </Header>
           <div
             id="layout"
-            className="w-full flex-1 overflow-auto px-4 py-6 sm:px-8 md:px-16 md:py-12 lg:px-28 xl:px-36 "
+            className="w-full flex-1 overflow-y-auto overflow-x-hidden px-4 py-6 sm:px-8 md:px-16 md:py-12 lg:px-28 xl:px-36 "
           >
             {children}
           </div>

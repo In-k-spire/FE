@@ -16,7 +16,7 @@ export default function Report() {
   }, [category, search]);
   return (
     <div className="flex w-full  items-center justify-center">
-      <div className="flex w-full flex-col rounded-xl  bg-gradient-to-b from-[#E6F5FA] ">
+      <div className="flex w-full flex-col rounded-xl border border-gray-200 bg-[#F0F5F9]">
         <CategorySearch setCategory={setSearch} />
         {List}
       </div>
