@@ -17,6 +17,13 @@ const LibRegistry = ({ children }: { children: ReactNode }) => {
         if (axios.isAxiosError(error)) handleError(error);
       },
     }),
+    defaultOptions: {
+      mutations: {
+        onError: (error) => {
+          if (axios.isAxiosError(error)) handleError(error);
+        },
+      },
+    },
   });
   return (
     <RecoilRoot>

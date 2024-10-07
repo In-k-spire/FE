@@ -1,11 +1,9 @@
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { login } from "./api";
 import { Storage } from "@/api/storage/storage";
-import useApiError from "@/hooks/useApiError";
 import { toast } from "react-toastify";
 
 export const useLoginMutation = () => {
-  const { handleError } = useApiError();
   const queryClient = useQueryClient();
   const { mutate: loginMutate, ...restMutation } = useMutation({
     mutationFn: login,
@@ -16,7 +14,6 @@ export const useLoginMutation = () => {
       queryClient.invalidateQueries({ queryKey: ["user"] });
       toast.success("로그인 성공!");
     },
-    onError: handleError,
   });
   return { loginMutate, ...restMutation };
 };
