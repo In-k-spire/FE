@@ -9,7 +9,7 @@ const ReviewInfo = ({ book }: { book: BookType }) => {
       <span className="mt-2 text-sm text-gray-400">
         {book.author}/{book.publisher}
       </span>
-      <div className="mt-12 flex gap-8">
+      <div className="mt-12 flex flex-col gap-8 md:flex-row">
         <BookLayout image={book.image} sizes="lg" />
         <span>{book.description}</span>
       </div>
