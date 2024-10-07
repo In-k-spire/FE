@@ -25,7 +25,7 @@ export const BtnLayout = ({
             props.disabled ? "pointer-events-none opacity-50" : "opacity-100"
           }
           ${SIZES[sizes]}
-          py-2 duration-200
+          flex py-2 duration-200
           `}
         >
           <button
