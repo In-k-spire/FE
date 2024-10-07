@@ -18,5 +18,8 @@ export interface BookProps extends Omit<CommonProps, "sizes"> {
 export interface BookReviewType {
   oneLineReview: string;
   content: string;
-  lastModifiedAt?: string;
+  createdAt?: string;
+  endPage: number | string;
+  startPage: number | string;
+  reviewId?: number;
 }

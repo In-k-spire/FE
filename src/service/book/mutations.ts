@@ -1,5 +1,5 @@
 import { useMutation, useQueryClient } from "@tanstack/react-query";
-import { setBook, setReview } from "./api";
+import { editReview, removeReview, setBook, setReview } from "./api";
 import { BookReviewType, BookType } from "@/type/book";
 import { toast } from "react-toastify";
 import { useRouter } from "next/navigation";
@@ -35,4 +35,28 @@ export const useBookReviewMutation = (id: number) => {
   });
 
   return { reviewMutate: mutate };
+};
+
+export const useReviewRemove = (id: number) => {
+  const queryClient = useQueryClient();
+  const { mutate, ...restMutate } = useMutation({
+    mutationFn: removeReview,
+    onSuccess: () => {
+      queryClient.invalidateQueries({ queryKey: ["review", id] });
+      toast.success("리뷰 삭제 성공!");
+    },
+  });
+  return { remove: mutate };
+};
+
+export const useReviewEdit = (id: number) => {
+  const queryClient = useQueryClient();
+  const { mutate, ...restMutate } = useMutation({
+    mutationFn: editReview,
+    onSuccess: () => {
+      queryClient.invalidateQueries({ queryKey: ["review", id] });
+      toast.success("리뷰 수정 성공!");
+    },
+  });
+  return { edit: mutate };
 };

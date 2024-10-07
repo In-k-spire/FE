@@ -31,9 +31,17 @@ export const getReview = async (id: number) => {
 };
 
 export const setReview = async (id: number, review: BookReviewType) => {
-  await server.post(
-    `/review`,
-    { ...review, endPage: 1, startPage: 1, bookId: id },
-    authorization(),
-  );
+  await server.post(`/review`, { ...review, bookId: id }, authorization());
+};
+
+export const removeReview = async (reviewId?: number) => {
+  await server.delete(`/review/${reviewId}`, authorization());
+};
+
+export const editReview = async (props: {
+  id?: number;
+  review: BookReviewType;
+}) => {
+  const { id, review } = props;
+  await server.put(`/review/${id}`, { ...review }, authorization());
 };
