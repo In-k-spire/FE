@@ -13,7 +13,7 @@ const BookLayout = ({ image, sizes = "md", className }: BookProps) => {
 
   return (
     <div
-      className={`${SIZES[sizes]} relative shrink-0 overflow-hidden rounded-lg shadow-2xl ${className}`}
+      className={`${SIZES[sizes]}  relative shrink-0 overflow-hidden rounded-lg border border-gray-300  ${className}`}
     >
       <Image
         alt="책"
