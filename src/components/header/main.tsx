@@ -15,12 +15,12 @@ const HeaderMain = ({ children }: { children: React.ReactNode }) => {
             className="relative cursor-pointer"
             onClick={() => setIsOpen((prev) => !prev)}
           >
-            {user?.name} 님 안녕하세요
+            {user?.name} <span className="hidden md:inline">님 안녕하세요</span>
             <div
               onClick={logout}
               className={`${
                 isOpen ? "flex" : "hidden"
-              } absolute left-0 top-[110%] rounded-md border border-gray-300 bg-white p-2 text-sm hover:text-primary`}
+              } absolute left-0 top-[110%] whitespace-nowrap rounded-md border border-gray-300 bg-white p-2 text-sm hover:text-primary`}
             >
               로그아웃
             </div>
