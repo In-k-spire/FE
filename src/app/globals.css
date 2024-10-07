@@ -56,7 +56,7 @@ html * {
 }
 
 .triangle {
-  @apply h-0 w-0  border-[1rem] border-b-shelfColor border-t-[transparent] lg:border-[1.25rem]  2xl:border-[1.5rem];
+  @apply h-0 w-0  border-[.75rem] border-b-shelfColor border-t-[transparent] md:border-[1rem] lg:border-[1.25rem]  2xl:border-[1.5rem];
 }
 
 @font-face {
