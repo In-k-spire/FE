@@ -4,7 +4,7 @@ import { BookReviewType, BookType } from "@/type/book";
 import { toast } from "react-toastify";
 import { useRouter } from "next/navigation";
 
-export const useBookMutation = () => {
+export const useAddBook = () => {
   const router = useRouter();
   const queryClient = useQueryClient();
   const { mutate, ...restMutate } = useMutation({
@@ -24,7 +24,7 @@ export const useBookMutation = () => {
   return { bookMutate: mutate };
 };
 
-export const useBookReviewMutation = (id: number) => {
+export const useAddReview = (id: number) => {
   const queryClient = useQueryClient();
   const { mutate, ...restMutate } = useMutation({
     mutationFn: (review: BookReviewType) => setReview(id, review),
@@ -37,7 +37,7 @@ export const useBookReviewMutation = (id: number) => {
   return { reviewMutate: mutate };
 };
 
-export const useReviewRemove = (id: number) => {
+export const useRemoveReview = (id: number) => {
   const queryClient = useQueryClient();
   const { mutate, ...restMutate } = useMutation({
     mutationFn: removeReview,
@@ -49,7 +49,7 @@ export const useReviewRemove = (id: number) => {
   return { remove: mutate };
 };
 
-export const useReviewEdit = (id: number) => {
+export const useEditReview = (id: number) => {
   const queryClient = useQueryClient();
   const { mutate, ...restMutate } = useMutation({
     mutationFn: editReview,

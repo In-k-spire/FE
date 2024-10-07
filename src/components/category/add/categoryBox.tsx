@@ -1,8 +1,9 @@
 import BtnLayout from "@/components/share/button";
 import DropDown from "@/components/share/dropdown";
 import { InputLayout } from "@/components/share/input";
-import useCategory from "@/hooks/useCategory";
-import { useBookMutation } from "@/service/book/mutations";
+import { useAddBook } from "@/service/book/mutations";
+import { useAddCategory } from "@/service/category/mutations";
+import { useCategory } from "@/service/category/queries";
 import { BookType } from "@/type/book";
 import { CategoryType } from "@/type/category";
 import { useSearchParams } from "next/navigation";
@@ -14,9 +15,10 @@ const CategoryBox = ({ book }: ICategoryBox) => {
   const params = useSearchParams();
   const defaultId = params.get("id");
   const defaultCategory = params.get("category");
-  const { category, categoryMutate } = useCategory();
+  const { category } = useCategory();
   const [newCategory, setNewCategory] = useState("");
-  const { bookMutate } = useBookMutation();
+  const { bookMutate } = useAddBook();
+  const { categoryMutate } = useAddCategory();
   const [categoryItem, setCategoryItem] = useState(
     defaultCategory || "카테고리를 선택해주세요",
   );

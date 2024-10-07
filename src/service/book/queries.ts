@@ -1,7 +1,7 @@
 import { useQuery } from "@tanstack/react-query";
 import { getBook, getReview } from "./api";
 
-export const useBookQuery = (id: number) => {
+export const useBook = (id: number) => {
   const { data, ...restQuery } = useQuery({
     queryKey: ["book", id],
     queryFn: () => getBook(id),
@@ -10,7 +10,7 @@ export const useBookQuery = (id: number) => {
   return { book: data, ...restQuery };
 };
 
-export const useBookReview = (id: number) => {
+export const useReviews = (id: number) => {
   const { data, ...restQuery } = useQuery({
     queryKey: ["review", id],
     queryFn: () => getReview(id),

@@ -1,14 +1,14 @@
 import { useQuery } from "@tanstack/react-query";
 import { getCategory, getCategoryById } from "./api";
 
-export const useAllCategoryQuery = () => {
+export const useCategory = () => {
   const { data, ...restQuery } = useQuery({
     queryKey: ["category"],
     queryFn: getCategory,
     retry: 1,
   });
 
-  return { data, ...restQuery };
+  return { category: data, ...restQuery };
 };
 
 export const useCategoryById = (id: string) => {

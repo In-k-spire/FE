@@ -1,7 +1,7 @@
 "use client";
 import { CateList } from "@/components/category/cateList";
 import { CategorySearch } from "@/components/category/categorySearch";
-import useCategory from "@/hooks/useCategory";
+import { useCategory } from "@/service/category/queries";
 import { CategoryType } from "@/type/category";
 import { useMemo, useState } from "react";
 export default function Report() {
@@ -14,7 +14,6 @@ export default function Report() {
         <CateList {...props} key={idx} />
       ));
   }, [category, search]);
-
   return (
     <div className="flex w-full  items-center justify-center">
       <div className="flex w-full flex-col rounded-xl  bg-gradient-to-b from-[#E6F5FA] ">

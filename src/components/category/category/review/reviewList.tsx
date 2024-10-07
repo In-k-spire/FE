@@ -1,11 +1,11 @@
 import { BookReviewType } from "@/type/book";
 import ReviewItem from "./reviewItem";
-import { useReviewEdit, useReviewRemove } from "@/service/book/mutations";
-import { useBookReviews } from "@/service/book/queries";
+import { useReviews } from "@/service/book/queries";
+import { useEditReview, useRemoveReview } from "@/service/book/mutations";
 const ReviewList = ({ id }: { id: number }) => {
-  const { review } = useBookReviews(id);
-  const { remove } = useReviewRemove(id);
-  const { edit } = useReviewEdit(id);
+  const { review } = useReviews(id);
+  const { remove } = useRemoveReview(id);
+  const { edit } = useEditReview(id);
   const ListItem = review?.map((item: BookReviewType, id: number) => (
     <ReviewItem edit={edit} id={id} key={id} remove={remove} review={item} />
   ));
