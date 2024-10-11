@@ -1,10 +1,9 @@
 import { server } from "@/api/instance/instance";
-import { Storage } from "@/api/storage/storage";
 import authorization from "@/api/token/authorization";
 import { LoginProps } from "@/type/user/user";
-
+import { hasCookie } from "cookies-next";
 export const getUser = async () => {
-  if (!!!Storage.getItem("accessToken")) return { name: "", id: "" };
+  if (!hasCookie("accessToken")) return { name: "", id: "" };
   const { data } = await server.get("/user", authorization());
   return data;
 };
@@ -17,6 +16,7 @@ export const login = async (props: LoginProps) => {
     redirectUri: `${
       props.provider == "google" ? `${redirect}/oauth?provider=google` : "/"
     }`,
+    withCredentials: true,
   });
   return data;
 };

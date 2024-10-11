@@ -1,9 +1,9 @@
-import { Storage } from "../storage/storage";
+import { getCookie } from "cookies-next";
 
 const authorization = () => {
   return {
     headers: {
-      Authorization: `Bearer ${Storage.getItem("accessToken")}`,
+      Authorization: `Bearer ${getCookie("accessToken")}`,
     },
   };
 };

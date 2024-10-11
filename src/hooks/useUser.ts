@@ -1,7 +1,7 @@
-import { Storage } from "@/api/storage/storage";
 import { useUserQuery } from "@/service/user/queries";
 import { useUserStore } from "@/store/user";
 import { useQueryClient } from "@tanstack/react-query";
+import { deleteCookie } from "cookies-next";
 import { useRouter } from "next/navigation";
 import { useEffect } from "react";
 
@@ -12,11 +12,11 @@ const useUser = () => {
   const { data } = useUserQuery();
   useEffect(() => {
     setUser(data);
-  }, [data]);
+  }, [data, setUser]);
 
   const logout = () => {
-    Storage.removeItem("accessToken");
-    Storage.removeItem("refreshToken");
+    deleteCookie("accessToken");
+    deleteCookie("refreshToken");
     queryClient.invalidateQueries({ queryKey: ["user"] });
     router.replace("/");
   };
