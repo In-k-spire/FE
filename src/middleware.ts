@@ -25,7 +25,7 @@ export async function middleware(req: NextRequest) {
     res.cookies.delete("refreshToken");
     return res;
   }
-  console.log(req.cookies.has("accessToken"), req.cookies.get("accessToken"));
+
   if (!req.cookies.has("accessToken"))
     return NextResponse.redirect(new URL("/login", req.url));
 
