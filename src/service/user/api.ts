@@ -7,16 +7,3 @@ export const getUser = async () => {
   const { data } = await server.get("/user", authorization());
   return data;
 };
-
-export const login = async (props: LoginProps) => {
-  const redirect =
-    process.env.NEXT_PUBLIC_REDIRECT_URI || "http://localhost:3000";
-  const { data } = await server.post(`/auth/${props.provider}/token`, {
-    authorizationCode: props.code,
-    redirectUri: `${
-      props.provider == "google" ? `${redirect}/oauth?provider=google` : "/"
-    }`,
-    withCredentials: true,
-  });
-  return data;
-};
