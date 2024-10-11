@@ -21,6 +21,7 @@
     "@types/react-toastify": "^4.1.0",
     "@types/recoil": "^0.0.9",
     "@types/swiper": "^6.0.0",
+    "cookies-next": "^4.3.0",
     "lodash": "^4.17.21",
     "next": "14.0.4",
     "next-sitemap": "^4.2.3",
