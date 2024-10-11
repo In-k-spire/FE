@@ -1,5 +1,7 @@
 import { ReactNode, useState } from "react";
-import Modal from "react-modal";
+import dynamic from "next/dynamic";
+
+const Modal = dynamic(() => import("react-modal"));
 export const useModal = (isBlur: boolean = true) => {
   const [isOpen, setIsOpen] = useState(false);
   const customStyles = {
