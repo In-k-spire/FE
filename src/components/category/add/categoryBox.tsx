@@ -6,15 +6,13 @@ import { useAddCategory } from "@/service/category/mutations";
 import { useCategory } from "@/service/category/queries";
 import { BookType } from "@/type/book";
 import { CategoryType } from "@/type/category";
-import { useSearchParams } from "next/navigation";
 import { useState } from "react";
 interface ICategoryBox {
   book?: BookType;
+  defaultId: number;
+  defaultCategory: string;
 }
-const CategoryBox = ({ book }: ICategoryBox) => {
-  const params = useSearchParams();
-  const defaultId = params.get("id");
-  const defaultCategory = params.get("category");
+const CategoryBox = ({ book, defaultCategory, defaultId }: ICategoryBox) => {
   const { category } = useCategory();
   const [newCategory, setNewCategory] = useState("");
   const { bookMutate } = useAddBook();
@@ -22,7 +20,7 @@ const CategoryBox = ({ book }: ICategoryBox) => {
   const [categoryItem, setCategoryItem] = useState(
     defaultCategory || "카테고리를 선택해주세요",
   );
-  const [selectedId, setSelectedId] = useState(Number(defaultId) || 0);
+  const [selectedId, setSelectedId] = useState(defaultId || 0);
   const handleCategory = (name: string, id: number) => {
     setCategoryItem(name);
     setSelectedId(id);

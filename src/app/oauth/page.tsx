@@ -1,15 +1,19 @@
 "use client";
 import { useLoginMutation } from "@/service/user/mutations";
-import { useRouter, useSearchParams } from "next/navigation";
+import { useRouter } from "next/navigation";
 import { useEffect } from "react";
-export default function OAuth() {
+interface IOAuth {
+  searchParams: {
+    code: string;
+    provider: string;
+  };
+}
+export default function OAuth({ searchParams }: IOAuth) {
   const { loginMutate, isPending } = useLoginMutation();
+  const { code, provider } = searchParams;
   const router = useRouter();
-  const params = useSearchParams();
-  const code = params.get("code");
-  const provider = params.get("provider");
   useEffect(() => {
-    loginMutate({ code, provider });
+    if (code && provider) loginMutate({ code, provider });
     if (!isPending) router.replace("/");
   }, []);
 
