@@ -58,7 +58,7 @@ const SearchBox = ({
       />
       {isLoading && title ? (
         <div className="p-4 text-center">로딩중</div>
-      ) : !title || !books.length ? null : (
+      ) : !title || !books?.length ? null : (
         <div className="mt-2 flex w-full flex-col rounded-md border border-gray-300">
           {BookList}
         </div>
