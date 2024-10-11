@@ -18,7 +18,7 @@ const useUser = () => {
     deleteCookie("accessToken");
     deleteCookie("refreshToken");
     queryClient.invalidateQueries({ queryKey: ["user"] });
-    router.replace("/");
+    router.replace("/logout");
   };
   return { user, logout };
 };
