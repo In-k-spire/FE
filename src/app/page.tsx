@@ -2,7 +2,6 @@
 import BtnLayout from "@/components/share/button";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay } from "swiper/modules";
-
 import Image from "next/image";
 import { quotes } from "@/constants/quote";
 import useUser from "@/hooks/useUser";
@@ -47,14 +46,13 @@ export default function Home() {
           </BtnLayout>
         </div>
       </div>
-      <div className="relative h-full w-full">
+      <div className="relative flex h-full w-full items-center">
         <Image
           className="object-contain"
           priority={true}
-          src="/reading.png"
-          width={0}
-          height={0}
-          fill
+          src="/reading.webp"
+          width={1000}
+          height={1000}
           sizes="100%"
           alt="사진"
         />
