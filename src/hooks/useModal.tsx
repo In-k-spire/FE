@@ -2,8 +2,10 @@ import { ReactNode, useState } from "react";
 import dynamic from "next/dynamic";
 
 const Modal = dynamic(() => import("react-modal"));
+
 export const useModal = (isBlur: boolean = true) => {
   const [isOpen, setIsOpen] = useState(false);
+
   const customStyles = {
     content: {
       top: "50%",
@@ -21,6 +23,7 @@ export const useModal = (isBlur: boolean = true) => {
             style={customStyles}
             isOpen={isOpen}
             onRequestClose={isBlur ? () => setIsOpen(false) : () => null}
+            parentSelector={() => document.body}
           >
             {children}
           </Modal>
