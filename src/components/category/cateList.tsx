@@ -54,7 +54,7 @@ export const CateList = ({ name, id, bookList }: ICateList) => {
         </div>
         <div className="flex gap-4">
           <BtnLayout
-            disabled={!bookList.length}
+            disabled={!bookList?.length}
             href={`/category/${id}`}
             sizes="sm"
             className="group rounded-md bg-shelfTextColor text-white"

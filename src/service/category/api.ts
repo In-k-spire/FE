@@ -1,8 +1,11 @@
 import { server } from "@/api/instance/instance";
 import authorization from "@/api/token/authorization";
 
-export const getCategory = async () => {
-  const { data } = await server.get("/category", authorization());
+export const getCategory = async (lastId?: number, name?: string) => {
+  const { data } = await server.get(
+    `/category/page?${lastId ? `lastId=${lastId}` : ""}${name ? `name=${name}` : ""}&limit=3`,
+    authorization(),
+  );
   return data;
 };
 
@@ -16,6 +19,7 @@ export const getCategoryById = async (id: string) => {
 };
 
 export const removeCategoryById = async (id: number) => {
+  console.log("remove");
   await server.delete(`/category/${id}`, authorization());
 };
 
