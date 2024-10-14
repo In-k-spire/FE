@@ -19,12 +19,6 @@ export async function middleware(req: NextRequest) {
 
     return res;
   }
-  if (req.nextUrl.pathname.startsWith("/logout")) {
-    const res = NextResponse.redirect(new URL("/", req.url));
-    res.cookies.delete("accessToken");
-    res.cookies.delete("refreshToken");
-    return res;
-  }
 
   if (!req.cookies.has("accessToken"))
     return NextResponse.redirect(new URL("/login", req.url));
@@ -33,5 +27,5 @@ export async function middleware(req: NextRequest) {
 }
 
 export const config = {
-  matcher: ["/review/:path*", "/category/:path*", "/oauth", "/logout"],
+  matcher: ["/review/:path*", "/category/:path*", "/oauth"],
 };

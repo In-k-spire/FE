@@ -6,3 +6,7 @@ export const getUser = async () => {
   const { data } = await server.get("/user", authorization());
   return data;
 };
+
+export const logout = async () => {
+  await server.delete("/auth/logout", authorization());
+};
