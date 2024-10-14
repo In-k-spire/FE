@@ -1,10 +1,12 @@
-import { naver } from "@/api/instance/instance";
+import { server } from "@/api/instance/instance";
+import authorization from "@/api/token/authorization";
 import type { GetBooks } from "@/type/naver";
 
 export const getBooks = async ({ query, display }: GetBooks) => {
   if (!query) return [];
-  const { data } = await naver.get("/", {
-    params: { query: query, display: display },
-  });
+  const { data } = await server.get(
+    `/book/search?query=${query}&display=${display}`,
+    authorization(),
+  );
   return data;
 };
