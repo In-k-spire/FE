@@ -3,6 +3,7 @@ import { server } from "./api/instance/instance";
 
 export async function middleware(req: NextRequest) {
   if (req.nextUrl.pathname.startsWith("/oauth")) {
+    const week = 24 * 60 * 60 * 1000 * 7;
     const code = req.nextUrl.searchParams.get("code");
     const provider = req.nextUrl.searchParams.get("provider");
     const redirect =
@@ -14,8 +15,10 @@ export async function middleware(req: NextRequest) {
     });
     const { refreshToken, accessToken } = data;
     const res = NextResponse.redirect(new URL("/", req.url));
-    res.cookies.set("accessToken", accessToken);
-    res.cookies.set("refreshToken", refreshToken);
+    res.cookies.set("accessToken", accessToken, { expires: Date.now() - week });
+    res.cookies.set("refreshToken", refreshToken, {
+      expires: Date.now() - week,
+    });
 
     return res;
   }
