@@ -1,36 +1,39 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# 📖 독후감 기록 사이트 Inkspire
 
-## Getting Started
+- **배포 URL : [https://ink-spire.netlify.app/](https://ink-spire.netlify.app)**
 
-First, run the development server:
+<img width="1512" alt="스크린샷 2024-10-16 오후 10 13 00" src="https://github.com/user-attachments/assets/b8954023-625e-4aed-998d-479fa3e74fe4">
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+<br>
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 프로젝트 소개
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- Inkspire는 내가 읽은 책을 기록하고, 저장하는 독후감 사이트입니다.
+- 누구나 자신이 읽은 책의 독후감을 쓰면서 생각을 다시 한번 정리하고, 언제든 자신이 썼던 독후감을 보면서 내용을 떠올릴 수 있으면 좋겠다는 생각에 프로젝트를 만들었습니다.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+<br>
 
-## Learn More
+## 1. 개발 환경
 
-To learn more about Next.js, take a look at the following resources:
+- Front : Next.js 14, Tailwind, React Query
+- 버전 및 이슈관리 : Github
+- 서비스 배포 환경 : Netlify
+  <br>
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 2. 채택한 개발 기술
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+### Next.js 14
 
-## Deploy on Vercel
+- Next.js 14 app router 기반 SSR 개발
+- middleware를 사용한 사용자 검증
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Tailwind
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- 기본 class style 을 통한 개발 속도 향상
+- sm, md, lg등의 반응형 속성을 통한 반응형 웹 서비스 개발
+- custom style을 통한 색상 통일 및 코드 최적화
+
+### React Query
+
+- useQuery와 useMutation을 통한 서버와 클라이언트 데이터 동기화
+- useInfiniteQuery + intersectionobserver를 사용한 무한 스크롤
