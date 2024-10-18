@@ -15,10 +15,8 @@ export async function middleware(req: NextRequest) {
     });
     const { refreshToken, accessToken } = data;
     const res = NextResponse.redirect(new URL("/", req.url));
-    res.cookies.set("accessToken", accessToken, { expires: Date.now() - week });
-    res.cookies.set("refreshToken", refreshToken, {
-      expires: Date.now() - week,
-    });
+    res.cookies.set("accessToken", accessToken);
+    res.cookies.set("refreshToken", refreshToken);
 
     return res;
   }
