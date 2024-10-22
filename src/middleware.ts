@@ -3,20 +3,24 @@ import { server } from "./api/instance/instance";
 
 export async function middleware(req: NextRequest) {
   if (req.nextUrl.pathname.startsWith("/oauth")) {
-    const week = 24 * 60 * 60 * 1000 * 7;
     const code = req.nextUrl.searchParams.get("code");
     const provider = req.nextUrl.searchParams.get("provider");
-    const redirect =
-      process.env.NEXT_PUBLIC_REDIRECT_URI || "http://localhost:3000";
+    const redirectUri =
+      provider === "google"
+        ? `${process.env.NEXT_PUBLIC_BASE}/oauth?provider=google`
+        : "/";
     const { data } = await server.post(`auth/${provider}/token`, {
       authorizationCode: code,
-      redirectUri:
-        provider == "google" ? `${redirect}/oauth?provider=google` : "/",
+      redirectUri: redirectUri,
     });
     const { refreshToken, accessToken } = data;
     const res = NextResponse.redirect(new URL("/", req.url));
-    res.cookies.set("accessToken", accessToken);
-    res.cookies.set("refreshToken", refreshToken);
+    res.cookies.set("accessToken", accessToken, {
+      maxAge: 60 * 60 * 24 * 7, //일주일
+    });
+    res.cookies.set("refreshToken", refreshToken, {
+      maxAge: 60 * 60 * 24 * 30, //한달,
+    });
 
     return res;
   }
