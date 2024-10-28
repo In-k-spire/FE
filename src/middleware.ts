@@ -9,19 +9,22 @@ export async function middleware(req: NextRequest) {
       provider === "google"
         ? `${process.env.NEXT_PUBLIC_BASE}/oauth?provider=google`
         : "/";
-    const { data } = await server.post(`auth/${provider}/token`, {
-      authorizationCode: code,
-      redirectUri: redirectUri,
-    });
-    const { refreshToken, accessToken } = data;
     const res = NextResponse.redirect(new URL("/", req.url));
-    res.cookies.set("accessToken", accessToken, {
-      maxAge: 60 * 60 * 24 * 7, //일주일
-    });
-    res.cookies.set("refreshToken", refreshToken, {
-      maxAge: 60 * 60 * 24 * 30, //한달,
-    });
+    await server
+      .post(`auth/${provider}/token`, {
+        authorizationCode: code,
+        redirectUri: redirectUri,
+      })
+      .then((response) => {
+        const { refreshToken, accessToken } = response.data;
 
+        res.cookies.set("accessToken", accessToken, {
+          maxAge: 60 * 60 * 24 * 7, //일주일
+        });
+        res.cookies.set("refreshToken", refreshToken, {
+          maxAge: 60 * 60 * 24 * 30, //한달,
+        });
+      });
     return res;
   }
 
